@@ -1,38 +1,38 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
-[ext_resource type="Texture2D" uid="uid://bgcvwpb3stm0u" path="res://Kostya/Free/Main Characters/Soul/idle.png" id="2_dndpq"]
+[ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Kostya/Free/Main Characters/Soul/idle2.png" id="2_ju2j4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ak7xu"]
-atlas = ExtResource("2_dndpq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyowv"]
+atlas = ExtResource("2_ju2j4")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wsclo"]
-atlas = ExtResource("2_dndpq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4g4e"]
+atlas = ExtResource("2_ju2j4")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxior"]
-atlas = ExtResource("2_dndpq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c86dr"]
+atlas = ExtResource("2_ju2j4")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7tggc"]
-atlas = ExtResource("2_dndpq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq3cq"]
+atlas = ExtResource("2_ju2j4")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_an2y0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ak7xu")
+"texture": SubResource("AtlasTexture_yyowv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wsclo")
+"texture": SubResource("AtlasTexture_t4g4e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yxior")
+"texture": SubResource("AtlasTexture_c86dr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7tggc")
+"texture": SubResource("AtlasTexture_bq3cq")
 }],
 "loop": true,
 "name": &"idle",
