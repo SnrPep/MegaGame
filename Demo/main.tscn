@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=6 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Kostya/Free/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
+[ext_resource type="PackedScene" uid="uid://bv6vlk265d23n" path="res://enemy.tscn" id="3_kpywb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1x4i"]
 texture = ExtResource("1_i35tq")
@@ -473,3 +474,6 @@ process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Enemy" parent="." instance=ExtResource("3_kpywb")]
+position = Vector2(282, 46)
