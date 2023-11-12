@@ -21,7 +21,7 @@ func _physics_process(delta):
 		has_double_jumped = false
 		if was_in_air == true:
 			land()
-		was_in_air = false
+			was_in_air = false
 
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -68,7 +68,7 @@ func double_jump():
 	
 func land():
 	animated_sprite.play("fall")
-	animation_loced = false
+	animation_loced = true
 
 func _on_animated_sprite_2d_animation_finished():
 	if (["fall", "double_jump", "jump"].has(animated_sprite.animation)):
