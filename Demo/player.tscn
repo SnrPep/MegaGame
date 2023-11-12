@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
-[ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Kostya/Free/Main Characters/Soul/idle2.png" id="2_ju2j4"]
+[ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Art/Free/Main Characters/Soul/idle2.png" id="2_ju2j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yyowv"]
 atlas = ExtResource("2_ju2j4")
@@ -44,6 +44,7 @@ radius = 8.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_n2sxs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
