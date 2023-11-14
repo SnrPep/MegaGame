@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=11 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
-[ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Art/Free/Main Characters/Soul/idle2.png" id="2_ju2j4"]
+[ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Art/Characters/Soul/idle2.png" id="2_ju2j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yyowv"]
 atlas = ExtResource("2_ju2j4")
@@ -47,6 +47,9 @@ height = 32.0
 radius = 8.0
 height = 28.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_efaqg"]
+radius = 6.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
@@ -58,11 +61,20 @@ autoplay = "idle"
 frame_progress = 0.215794
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_ersjg")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_dbmsp")
+
+[node name="AttackArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(7, 5)
+shape = SubResource("CircleShape2D_efaqg")

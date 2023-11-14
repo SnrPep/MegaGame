@@ -5,8 +5,9 @@ class_name Player
 @export var jump_velocity : float = -150.0
 @export var double_jump_velocity : float = -100.0
 
-
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+
+@export var attacking = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped : bool = false
@@ -16,6 +17,10 @@ var was_in_air : bool = false
 
 func _ready():
 	GameManager.player = self
+
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -56,6 +61,14 @@ func update_animation():
 		else: 
 			animated_sprite.play("idle")
 			
+func attack():
+	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	
+	for area in overlapping_objects:
+		if area.get_parent().is_in_group("Enemies"):
+			area.get_parent().die()
+	attacking = true
+
 func update_facing_direction():
 	if direction.x > 0:
 		animated_sprite.flip_h = false

@@ -27,3 +27,11 @@ func flip():
 		speed = abs(speed)
 	else:
 		speed = abs(speed) * -1
+
+
+func _on_hitbox_area_entered(area):
+	if area.get_parent() is Player:
+		area.get_parent().die()
+
+func die():
+	queue_free()

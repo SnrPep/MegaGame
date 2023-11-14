@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg75g2msmpb5c"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_6qk3n"]
-[ext_resource type="Texture2D" uid="uid://cj76fcraw403t" path="res://Art/house1.png" id="2_strhq"]
-[ext_resource type="Texture2D" uid="uid://dtrodfl6krv7p" path="res://Art/no_active_house1.png" id="3_6bfyh"]
+[ext_resource type="Texture2D" uid="uid://cj76fcraw403t" path="res://Art/interactive/house1.png" id="2_strhq"]
+[ext_resource type="Texture2D" uid="uid://dtrodfl6krv7p" path="res://Art/interactive/no_active_house1.png" id="3_6bfyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7meu"]
 size = Vector2(47, 76)
