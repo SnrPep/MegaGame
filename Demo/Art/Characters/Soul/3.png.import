@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nu5fifq5uye2"
-path="res://.godot/imported/3.png-053295e11009dfc6563c6cba18686b56.ctex"
+path="res://.godot/imported/3.png-7f3175ad19a70224dea4e0e8ebb0022b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Free/Main Characters/Soul/3.png"
-dest_files=["res://.godot/imported/3.png-053295e11009dfc6563c6cba18686b56.ctex"]
+source_file="res://Art/Characters/Soul/3.png"
+dest_files=["res://.godot/imported/3.png-7f3175ad19a70224dea4e0e8ebb0022b.ctex"]
 
 [params]
 
