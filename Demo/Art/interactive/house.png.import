@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbqmpvrekfjuq"
-path="res://.godot/imported/Desappearing (96x96).png-29e7876cd060de49b8050a329b8c88b3.ctex"
+uid="uid://d5ayianime4l"
+path="res://.godot/imported/house.png-2f9fecf80a4b73f89d011f826f088ae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Free/Main Characters/Desappearing (96x96).png"
-dest_files=["res://.godot/imported/Desappearing (96x96).png-29e7876cd060de49b8050a329b8c88b3.ctex"]
+source_file="res://Art/house.png"
+dest_files=["res://.godot/imported/house.png-2f9fecf80a4b73f89d011f826f088ae6.ctex"]
 
 [params]
 

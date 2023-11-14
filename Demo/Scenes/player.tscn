@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=10 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Art/Free/Main Characters/Soul/idle2.png" id="2_ju2j4"]
@@ -43,6 +43,10 @@ animations = [{
 radius = 8.0
 height = 32.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbmsp"]
+radius = 8.0
+height = 28.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
@@ -56,3 +60,9 @@ frame_progress = 0.215794
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_ersjg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_dbmsp")

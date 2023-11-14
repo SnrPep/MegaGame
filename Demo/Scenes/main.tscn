@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=7 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Free/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
 [ext_resource type="PackedScene" uid="uid://bv6vlk265d23n" path="res://enemy.tscn" id="3_kpywb"]
+[ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="4_wpsdf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1x4i"]
 texture = ExtResource("1_i35tq")
@@ -477,3 +478,10 @@ drag_vertical_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_kpywb")]
 position = Vector2(282, 46)
+
+[node name="Checkpoint" parent="." instance=ExtResource("4_wpsdf")]
+position = Vector2(33, 33)
+spawnpoint = true
+
+[node name="Checkpoint2" parent="." instance=ExtResource("4_wpsdf")]
+position = Vector2(184, 33)

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed : float = 150.0
 @export var jump_velocity : float = -150.0
@@ -12,6 +13,9 @@ var has_double_jumped : bool = false
 var animation_loced : bool = false
 var direction : Vector2 = Vector2.ZERO
 var was_in_air : bool = false
+
+func _ready():
+	GameManager.player = self
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -41,6 +45,9 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation()
 	update_facing_direction()
+	
+	if position.y >= 600:
+		die()
 
 func update_animation():
 	if not animation_loced:
@@ -73,3 +80,6 @@ func land():
 func _on_animated_sprite_2d_animation_finished():
 	if (["fall", "double_jump", "jump"].has(animated_sprite.animation)):
 		animation_loced = false
+
+func die():
+	GameManager.respawn_player()
