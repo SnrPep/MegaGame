@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=12 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
+[ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
 [ext_resource type="Texture2D" uid="uid://bgjifwfbk2snh" path="res://Art/Characters/Soul/idle2.png" id="2_ju2j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yyowv"]
@@ -41,18 +42,24 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ersjg"]
 radius = 8.0
-height = 32.0
+height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbmsp"]
 radius = 8.0
 height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efaqg"]
-radius = 31.0161
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
+
+[node name="Healthbar" parent="." instance=ExtResource("2_7lqtd")]
+offset_left = -14.0
+offset_top = -18.0
+offset_right = -14.0
+offset_bottom = -18.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_an2y0")
@@ -61,14 +68,13 @@ autoplay = "idle"
 frame_progress = 0.215794
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 0)
+position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_ersjg")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-visible = false
 position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_dbmsp")
 
@@ -76,5 +82,5 @@ shape = SubResource("CapsuleShape2D_dbmsp")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(33, 2)
+position = Vector2(9, 4)
 shape = SubResource("CircleShape2D_efaqg")

@@ -9,6 +9,11 @@ class_name Player
 
 @export var attacking = false
 
+var max_health = 3
+var health = 0
+var can_take_damage = true
+@export var hit = false
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped : bool = false
 var animation_loced : bool = false
@@ -16,10 +21,11 @@ var direction : Vector2 = Vector2.ZERO
 var was_in_air : bool = false
 
 func _ready():
+	health = max_health
 	GameManager.player = self
 
 func _process(delta):
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") && !hit:
 		attack()
 
 func _physics_process(delta):
@@ -93,6 +99,24 @@ func land():
 func _on_animated_sprite_2d_animation_finished():
 	if (["fall", "double_jump", "jump"].has(animated_sprite.animation)):
 		animation_loced = false
+
+func take_damage(damage_amount : int):
+	if can_take_damage:
+		iframes()
+		health -= damage_amount
+		
+		get_node("Healthbar").update_healthbar(health, max_health)
+		
+		hit = true
+		attacking = false
+		
+		if health <= 0:
+			die()
+
+func iframes():
+	can_take_damage = false
+	await get_tree().create_timer(1).timeout
+	can_take_damage = true
 
 func die():
 	GameManager.respawn_player()
