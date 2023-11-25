@@ -57,7 +57,7 @@ func _physics_process(delta):
 	update_animation()
 	update_facing_direction()
 	
-	if position.y >= 600:
+	if position.y >= 80:
 		die()
 
 func update_animation():
