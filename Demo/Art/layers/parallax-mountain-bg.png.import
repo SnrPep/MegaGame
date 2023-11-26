@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jdy8a2eipvvm"
-path="res://.godot/imported/background_glacial_mountains.png-fb2c513faf38ebf935806dbe43296aec.ctex"
+uid="uid://dmix3y3fs6pcb"
+path="res://.godot/imported/parallax-mountain-bg.png-5f41b9ba48498be8ce74cc0ef2f2cec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background_glacial_mountains.png"
-dest_files=["res://.godot/imported/background_glacial_mountains.png-fb2c513faf38ebf935806dbe43296aec.ctex"]
+source_file="res://Art/layers/parallax-mountain-bg.png"
+dest_files=["res://.godot/imported/parallax-mountain-bg.png-5f41b9ba48498be8ce74cc0ef2f2cec8.ctex"]
 
 [params]
 
