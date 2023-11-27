@@ -49,7 +49,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efaqg"]
-radius = 9.0
+radius = 9.05539
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -82,5 +82,5 @@ shape = SubResource("CapsuleShape2D_dbmsp")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(9, 4)
+position = Vector2(10, 6)
 shape = SubResource("CircleShape2D_efaqg")

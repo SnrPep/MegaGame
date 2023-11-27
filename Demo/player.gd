@@ -73,7 +73,7 @@ func attack():
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("Enemies"):
 			area.get_parent().die()
-	attacking = true
+			attacking = true
 
 func update_facing_direction():
 	if direction.x > 0:
