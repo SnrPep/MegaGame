@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="2_tbf3l"]
 [ext_resource type="Texture2D" uid="uid://irmwkl08wcyt" path="res://Art/layers/parallax-mountain-bg day.png" id="3_3ofaw"]
 [ext_resource type="Texture2D" uid="uid://cesgga8s03663" path="res://Art/layers/Moon_Phase_111.png" id="4_wh7sw"]
-[ext_resource type="Texture2D" uid="uid://w6o7rdk552y1" path="res://Art/layers/parallax-mountain-bg 222.png" id="5_nm67b"]
+[ext_resource type="Texture2D" uid="uid://7juowby8j2vy" path="res://Art/layers/parallax-cloud-bg day1.png" id="5_0dj80"]
 [ext_resource type="Texture2D" uid="uid://b5i1pc2oro1g7" path="res://Art/layers/parallax-mountain-montain-far day.png" id="6_hjirj"]
 [ext_resource type="Texture2D" uid="uid://dxxt18jolsgl6" path="res://Art/layers/parallax-mountain-mountains day.png" id="7_qjke0"]
 [ext_resource type="Texture2D" uid="uid://c61867byh3jfs" path="res://Art/layers/parallax-mountain-trees day.png" id="8_7ihy1"]
@@ -533,9 +533,9 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(360, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-position = Vector2(-1, -15)
+position = Vector2(-15, -14)
 scale = Vector2(1.324, 1.18975)
-texture = ExtResource("5_nm67b")
+texture = ExtResource("5_0dj80")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]

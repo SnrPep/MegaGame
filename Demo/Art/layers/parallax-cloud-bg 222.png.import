@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w6o7rdk552y1"
-path="res://.godot/imported/parallax-mountain-bg 222.png-8a683566d1fed5f124a8fd1df0670225.ctex"
+path="res://.godot/imported/parallax-cloud-bg 222.png-aa1449f31b296ad84a54919a809311f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/layers/parallax-mountain-bg 222.png"
-dest_files=["res://.godot/imported/parallax-mountain-bg 222.png-8a683566d1fed5f124a8fd1df0670225.ctex"]
+source_file="res://Art/layers/parallax-cloud-bg 222.png"
+dest_files=["res://.godot/imported/parallax-cloud-bg 222.png-aa1449f31b296ad84a54919a809311f3.ctex"]
 
 [params]
 
