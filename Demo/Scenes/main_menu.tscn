@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bina62flcgaq3"]
+[gd_scene load_steps=4 format=3 uid="uid://bina62flcgaq3"]
 
 [ext_resource type="Texture2D" uid="uid://b55od8rot87iw" path="res://Art/Terrain/mainback.png" id="1_qoqii"]
 [ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="2_isufi"]
+[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_lnexp"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -41,7 +42,8 @@ alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Play"
+theme_override_fonts/font = ExtResource("3_lnexp")
+text = "Start"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
 layout_mode = 2
@@ -51,6 +53,7 @@ alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_lnexp")
 text = "Quit"
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]

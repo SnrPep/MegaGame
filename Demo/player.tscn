@@ -1,8 +1,65 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=32 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
+[ext_resource type="Texture2D" uid="uid://cb4vnvf3xum6q" path="res://Art/Characters/Soul/Attack.png" id="3_7i405"]
 [ext_resource type="Texture2D" uid="uid://1nyyknrbaxai" path="res://Art/Characters/Soul/Dark_version.png" id="3_ycj7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh1pr"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7awh"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq0yu"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d28a0"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m17dm"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu27l"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nd45"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qioh"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydm1p"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0kxj"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_873jx"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44nnk"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ocfe"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu88i"]
+atlas = ExtResource("3_7i405")
+region = Rect2(0, 416, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0hqc"]
 atlas = ExtResource("3_ycj7n")
@@ -42,6 +99,53 @@ region = Rect2(0, 256, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_an2y0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh1pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7awh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq0yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d28a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m17dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu27l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nd45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qioh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydm1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0kxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_873jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44nnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ocfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu88i")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m0hqc")
@@ -84,7 +188,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efaqg"]
-radius = 9.05539
+radius = 10.0499
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -98,10 +202,9 @@ offset_bottom = -18.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_an2y0")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.277603
+frame_progress = 0.0794117
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
