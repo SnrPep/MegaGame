@@ -6,8 +6,8 @@
 [node name="MainMenu" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(186, 120)
-scale = Vector2(0.209375, 0.224074)
+position = Vector2(186.5, 117)
+scale = Vector2(0.208854, 0.22963)
 texture = ExtResource("1_qoqii")
 
 [node name="Menu_buttons" type="CanvasLayer" parent="."]
@@ -25,7 +25,7 @@ offset_right = 60.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.729412, 0.729412, 0.729412, 0)
+color = Color(0.12549, 0.494118, 0.462745, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu_buttons/MainMenu"]
 layout_mode = 0
@@ -54,5 +54,5 @@ size_flags_horizontal = 0
 text = "Quit"
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]

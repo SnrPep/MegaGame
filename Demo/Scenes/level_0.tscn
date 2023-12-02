@@ -22,6 +22,7 @@ texture = ExtResource("2_23iup")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ytlyd"]
 physics_layer_0/collision_layer = 1
@@ -60,3 +61,5 @@ centered = false
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(296, 61)
 texture = ExtResource("4_t1ujg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
