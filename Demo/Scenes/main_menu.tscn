@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bina62flcgaq3"]
+
+[ext_resource type="Texture2D" uid="uid://b55od8rot87iw" path="res://Art/Terrain/mainback.png" id="1_qoqii"]
+[ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="2_isufi"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(186, 120)
+scale = Vector2(0.209375, 0.224074)
+texture = ExtResource("1_qoqii")
+
+[node name="Menu_buttons" type="CanvasLayer" parent="."]
+script = ExtResource("2_isufi")
+
+[node name="MainMenu" type="ColorRect" parent="Menu_buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.729412, 0.729412, 0.729412, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_buttons/MainMenu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Play"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Quit"
+
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]

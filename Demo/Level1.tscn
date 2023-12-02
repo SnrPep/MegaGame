@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=17 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bxqjmad0gcxco" path="res://Art/layers/Trees evening new.png" id="12_eb5m8"]
 [ext_resource type="Texture2D" uid="uid://bjdex46pw1u23" path="res://Art/layers/Grass.png" id="12_om22k"]
 [ext_resource type="PackedScene" uid="uid://bv6vlk265d23n" path="res://enemy.tscn" id="12_yxxr4"]
+[ext_resource type="Script" path="res://Scripts/UI manager.gd" id="14_7c13n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8fih"]
 texture = ExtResource("1_i35tq")
@@ -572,3 +573,70 @@ centered = false
 
 [node name="Enemy" parent="." instance=ExtResource("12_yxxr4")]
 position = Vector2(398, 121)
+
+[node name="UI manager" type="CanvasLayer" parent="."]
+script = ExtResource("14_7c13n")
+
+[node name="Pause_menu" type="ColorRect" parent="UI manager"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -90.0
+offset_right = 60.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.537255, 0.403922, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI manager/Pause_menu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Restart" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Restart"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Menu"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer/Resume" to="UI manager" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer2/Restart" to="UI manager" method="_on_restart_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer3/Menu" to="UI manager" method="_on_menu_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer4/Quit" to="UI manager" method="_on_quit_pressed"]
