@@ -29,23 +29,24 @@ func _process(delta):
 		attack()
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		was_in_air = true
-	else:
-		has_double_jumped = false
-		if was_in_air == true:
-			land()
-			was_in_air = false
+	if !attacking:
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			was_in_air = true
+		else:
+			has_double_jumped = false
+			if was_in_air == true:
+				land()
+				was_in_air = false
 
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			jump()
-		elif not has_double_jumped:
-			double_jump()
+		if Input.is_action_just_pressed("jump"):
+			if is_on_floor():
+				jump()
+			elif not has_double_jumped:
+				double_jump()
 
-#	if Input.is_action_just_pressed("attack"):
-#		attack()
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 	direction = Input.get_vector("left", "right", "up", "down")
 	if direction.x != 0 && animated_sprite.animation != "fall":
@@ -97,7 +98,7 @@ func land():
 	animation_loced = true
 
 func _on_animated_sprite_2d_animation_finished():
-	if (["fall", "double_jump", "jump"].has(animated_sprite.animation)):
+	if (["fall", "double_jump", "jump", "attack"].has(animated_sprite.animation)):
 		animation_loced = false
 
 func take_damage(damage_amount : int):

@@ -501,7 +501,6 @@ texture = ExtResource("2_hbgb6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FirTree2"]
 position = Vector2(-0.75424, -0.245667)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iwwkh")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -653,7 +652,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(1718.08, 211.41)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -677,7 +675,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(1084.02, 205.963)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -701,7 +698,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(1718.08, 211.41)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -725,7 +721,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(-1367.07, 220.487)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -749,7 +744,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(-1987, 202.735)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -773,7 +767,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree13" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(-1987, 202.735)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
@@ -797,7 +790,6 @@ texture = ExtResource("22_j3iml")
 
 [node name="MiddleLaneTree15" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
 position = Vector2(-856.146, 183.37)
-scale = Vector2(1, 1)
 texture = ExtResource("21_jcwsc")
 
 [node name="JungleTree7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
