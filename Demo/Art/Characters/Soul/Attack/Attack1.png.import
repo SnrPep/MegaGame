@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkqywig54mmid"
-path="res://.godot/imported/0.png-59da8fbf78927b428c02a1bd1f148a0f.ctex"
+uid="uid://bqj0mouka3n1s"
+path="res://.godot/imported/Attack1.png-605ab9fac0d4708895cdf4c99db45fa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Characters/Soul/0.png"
-dest_files=["res://.godot/imported/0.png-59da8fbf78927b428c02a1bd1f148a0f.ctex"]
+source_file="res://Art/Characters/Soul/Attack/Attack1.png"
+dest_files=["res://.godot/imported/Attack1.png-605ab9fac0d4708895cdf4c99db45fa7.ctex"]
 
 [params]
 
