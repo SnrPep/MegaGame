@@ -53,6 +53,9 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_csfaf"]
+resource_name = "attack"
+
 [sub_resource type="Animation" id="Animation_qu5ur"]
 resource_name = "idle"
 length = 1.75
