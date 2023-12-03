@@ -5,8 +5,7 @@ class_name Player
 @onready var sprite = $Sprite2D
 
 @export var speed : float = 150.0
-@export var jump_velocity : float = -150.0
-@export var double_jump_velocity : float = -100.0
+@export var jump_velocity : float = -200.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -56,12 +55,12 @@ func _physics_process(delta):
 func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
 	
-	animation.play("attack")
-	
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("Enemies"):
 			area.get_parent().die()
-			attacking = true
+	
+	attacking = true
+	animation.play("attack")
 
 func update_animation():
 	if !attacking:
@@ -92,6 +91,7 @@ func iframes():
 	can_take_damage = false
 	await get_tree().create_timer(1).timeout
 	can_take_damage = true
+	hit = false
 
 func die():
 	GameManager.respawn_player()
