@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bina62flcgaq3"]
 
-[ext_resource type="Texture2D" uid="uid://doxoigxxxirf8" path="res://Art/Terrain/menuback.jpg" id="1_er8p4"]
+[ext_resource type="Texture2D" uid="uid://c1b0io5g1llg5" path="res://Art/Terrain/newmainmenuback.jpg" id="1_j38vc"]
 [ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="2_isufi"]
 [ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="3_83m2k"]
 [ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_lnexp"]
@@ -8,9 +8,9 @@
 [node name="MainMenu" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, 104.643)
-scale = Vector2(0.350586, 0.27274)
-texture = ExtResource("1_er8p4")
+position = Vector2(180.25, 119.321)
+scale = Vector2(0.354004, 0.236956)
+texture = ExtResource("1_j38vc")
 
 [node name="Menu_buttons" type="CanvasLayer" parent="."]
 script = ExtResource("2_isufi")
@@ -19,15 +19,13 @@ script = ExtResource("2_isufi")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -70.0
-offset_top = 20.0
-offset_right = 70.0
-offset_bottom = 47.0
+offset_left = -50.0
+offset_top = 60.0
+offset_right = 90.0
+offset_bottom = 87.0
 grow_horizontal = 2
 auto_translate = false
 theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.45098, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_83m2k")
 theme_override_font_sizes/font_size = 25
 text = "A live in dream"
@@ -56,10 +54,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -35.0
-offset_right = 60.0
-offset_bottom = 35.0
+offset_left = -40.0
+offset_right = 80.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 

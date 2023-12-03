@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b55od8rot87iw"
-path="res://.godot/imported/mainback.png-3c295092ecb56028572dd9678b716bc4.ctex"
+uid="uid://c1b0io5g1llg5"
+path="res://.godot/imported/newmainmenuback.jpg-17fa5c027f9a9b66ee161ab4aa1b18bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Terrain/mainback.png"
-dest_files=["res://.godot/imported/mainback.png-3c295092ecb56028572dd9678b716bc4.ctex"]
+source_file="res://Art/Terrain/newmainmenuback.jpg"
+dest_files=["res://.godot/imported/newmainmenuback.jpg-17fa5c027f9a9b66ee161ab4aa1b18bc.ctex"]
 
 [params]
 
