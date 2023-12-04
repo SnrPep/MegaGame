@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dcw0muxsqrvkp" path="res://Art/Trees/PNG/birch_2.png" id="29_g1lgj"]
 [ext_resource type="Texture2D" uid="uid://p32eo7aidtta" path="res://Art/Trees/PNG/fir_tree_4.png" id="30_ce140"]
 [ext_resource type="Texture2D" uid="uid://c6yfrvck2ijnr" path="res://Art/Trees/PNG/fir_tree_10.png" id="31_q0afp"]
+[ext_resource type="PackedScene" uid="uid://dasmmtx6c22sh" path="res://Scenes/pause_menu.tscn" id="33_78br0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ynf"]
 texture = ExtResource("18_h6141")
@@ -1083,3 +1084,5 @@ texture = ExtResource("16_fankj")
 
 [node name="Enemy" parent="." instance=ExtResource("12_yxxr4")]
 position = Vector2(398, 121)
+
+[node name="PauseMenu" parent="." instance=ExtResource("33_78br0")]
