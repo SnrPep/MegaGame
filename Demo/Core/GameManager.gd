@@ -25,7 +25,7 @@ func restart():
 	get_tree().reload_current_scene()
 
 func MainMenu():
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 func quit():
 	get_tree().quit()

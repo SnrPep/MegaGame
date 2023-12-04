@@ -1,19 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bina62flcgaq3"]
+[gd_scene load_steps=5 format=3 uid="uid://bu8m1e7wf0wyt"]
 
-[ext_resource type="Texture2D" uid="uid://c1b0io5g1llg5" path="res://Art/Terrain/newmainmenuback.jpg" id="1_j38vc"]
-[ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="2_isufi"]
-[ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="3_83m2k"]
-[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_lnexp"]
+[ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="1_u4vja"]
+[ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_l3juj"]
+[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_iamss"]
+[ext_resource type="Texture2D" uid="uid://c1b0io5g1llg5" path="res://Art/Terrain/newmainmenuback.jpg" id="4_3pdcf"]
 
-[node name="MainMenu" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180.25, 119.321)
-scale = Vector2(0.354004, 0.236956)
-texture = ExtResource("1_j38vc")
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Menu_buttons" type="CanvasLayer" parent="."]
-script = ExtResource("2_isufi")
+script = ExtResource("1_u4vja")
 
 [node name="Label" type="Label" parent="Menu_buttons"]
 anchors_preset = 5
@@ -26,7 +27,7 @@ offset_bottom = 87.0
 grow_horizontal = 2
 auto_translate = false
 theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
-theme_override_fonts/font = ExtResource("3_83m2k")
+theme_override_fonts/font = ExtResource("2_l3juj")
 theme_override_font_sizes/font_size = 25
 text = "A live in dream"
 horizontal_alignment = 1
@@ -69,6 +70,7 @@ alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../../HBoxContainer2/Quit")
 theme_override_colors/font_color = Color(0.662745, 0.345098, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.984314, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.913725, 0, 0, 1)
@@ -82,7 +84,7 @@ theme_override_colors/icon_hover_color = Color(0.960784, 0.356863, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 0.392157, 0, 1)
 theme_override_colors/icon_focus_color = Color(0.882353, 0.352941, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0.741176, 0.341176, 0, 1)
-theme_override_fonts/font = ExtResource("3_lnexp")
+theme_override_fonts/font = ExtResource("3_iamss")
 text = "Start"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
@@ -93,12 +95,18 @@ alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_bottom = NodePath("../../HBoxContainer/Play")
 theme_override_colors/font_color = Color(0.662745, 0.345098, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0.839216, 1)
 theme_override_colors/font_focus_color = Color(0, 0.827451, 0, 1)
-theme_override_fonts/font = ExtResource("3_lnexp")
+theme_override_fonts/font = ExtResource("3_iamss")
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(180.25, 119.321)
+scale = Vector2(0.354004, 0.236956)
+texture = ExtResource("4_3pdcf")
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
