@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://dasmmtx6c22sh"]
+
+[ext_resource type="Script" path="res://Scripts/UI manager.gd" id="1_b80nr"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI manager" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("1_b80nr")
+
+[node name="Pause_menu" type="ColorRect" parent="UI manager"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -90.0
+offset_right = 60.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.372549, 0.372549, 0.372549, 0.835294)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI manager/Pause_menu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 170.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Restart" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "Restart"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "Menu"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "Quit"
+
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer/Resume" to="UI manager" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer2/Restart" to="UI manager" method="_on_restart_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer3/Menu" to="UI manager" method="_on_menu_pressed"]
+[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer4/Quit" to="UI manager" method="_on_quit_pressed"]

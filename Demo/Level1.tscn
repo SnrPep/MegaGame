@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bxqjmad0gcxco" path="res://Art/layers/Trees evening new.png" id="12_eb5m8"]
 [ext_resource type="Texture2D" uid="uid://bjdex46pw1u23" path="res://Art/layers/Grass.png" id="12_om22k"]
 [ext_resource type="PackedScene" uid="uid://bv6vlk265d23n" path="res://enemy.tscn" id="12_yxxr4"]
-[ext_resource type="Script" path="res://Scripts/UI manager.gd" id="14_7c13n"]
 [ext_resource type="Texture2D" uid="uid://du288osle6r4i" path="res://Art/Trees/PNG/birch_1.png" id="14_ugecr"]
 [ext_resource type="Texture2D" uid="uid://cw2r17x1o27jx" path="res://Art/Trees/PNG/birch_3.png" id="15_qcu3g"]
 [ext_resource type="Texture2D" uid="uid://tubkj3rai2ew" path="res://Art/Trees/PNG/middle_lane_tree5.png" id="16_fankj"]
@@ -26,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dswl5q873ggt" path="res://Art/Trees/PNG/jungle_tree_1.png" id="21_ki5ro"]
 [ext_resource type="Texture2D" uid="uid://c2vw344avh06d" path="res://Art/Trees/PNG/middle_lane_tree2.png" id="22_j3iml"]
 [ext_resource type="Texture2D" uid="uid://djmraweevdv6s" path="res://Art/Bushes/PNG/Bushes3/Bush3_1.png" id="23_wr0fb"]
+[ext_resource type="PackedScene" uid="uid://dasmmtx6c22sh" path="res://Scenes/pause_menu.tscn" id="25_yy0jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwwkh"]
 size = Vector2(27.1525, 262.474)
@@ -499,8 +499,9 @@ position = Vector2(-7.25, 101.581)
 scale = Vector2(0.331461, 0.331461)
 texture = ExtResource("2_hbgb6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FirTree2"]
-position = Vector2(-0.75424, -0.245667)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 101.5)
+scale = Vector2(0.331461, 0.331461)
 shape = SubResource("RectangleShape2D_iwwkh")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -927,72 +928,11 @@ position = Vector2(-1845.25, -18.916)
 scale = Vector2(0.570175, 0.6)
 texture = ExtResource("20_ja67n")
 
+[node name="PauseMenu" parent="." instance=ExtResource("25_yy0jg")]
+offset_left = 398.0
+offset_top = 121.0
+offset_right = 398.0
+offset_bottom = 121.0
+
 [node name="Enemy" parent="." instance=ExtResource("12_yxxr4")]
 position = Vector2(398, 121)
-
-[node name="UI manager" type="CanvasLayer" parent="."]
-script = ExtResource("14_7c13n")
-
-[node name="Pause_menu" type="ColorRect" parent="UI manager"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -90.0
-offset_right = 60.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.537255, 0.403922, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI manager/Pause_menu"]
-layout_mode = 0
-offset_top = 10.0
-offset_right = 120.0
-offset_bottom = 170.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Resume" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 2
-text = "Resume"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Restart" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 2
-text = "Restart"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Menu" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 2
-text = "Menu"
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Quit" type="Button" parent="UI manager/Pause_menu/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 2
-text = "Quit"
-
-[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer/Resume" to="UI manager" method="_on_resume_pressed"]
-[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer2/Restart" to="UI manager" method="_on_restart_pressed"]
-[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer3/Menu" to="UI manager" method="_on_menu_pressed"]
-[connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer4/Quit" to="UI manager" method="_on_quit_pressed"]

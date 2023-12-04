@@ -15,7 +15,7 @@ func respawn_player():
 
 func pause_play():
 	paused = !paused
-	
+	get_tree().paused = paused
 	pause_menu.visible = paused
 
 func resume():
@@ -31,4 +31,4 @@ func quit():
 	get_tree().quit()
 
 func play():
-	get_tree().change_scene_to_file("res://Level1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_0.tscn")
