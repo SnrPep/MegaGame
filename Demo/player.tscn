@@ -101,11 +101,11 @@ offset_bottom = -18.0
 texture = ExtResource("12_ohj6d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_20r7q")
 }
-autoplay = "idle"
-speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
