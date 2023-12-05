@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dasmmtx6c22sh"]
+[gd_scene load_steps=3 format=3 uid="uid://dasmmtx6c22sh"]
 
 [ext_resource type="Script" path="res://Scripts/UI manager.gd" id="1_b80nr"]
+[ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_5cqyf"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -21,21 +22,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -90.0
-offset_right = 60.0
-offset_bottom = 90.0
+offset_left = -180.0
+offset_top = -120.0
+offset_right = 180.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-color = Color(0.372549, 0.372549, 0.372549, 0.835294)
+color = Color(0.317647, 0.317647, 0.317647, 0.396078)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI manager/Pause_menu"]
-layout_mode = 0
-offset_top = 10.0
-offset_right = 120.0
-offset_bottom = 170.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
 layout_mode = 2
@@ -46,6 +55,7 @@ custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5cqyf")
 text = "Resume"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
@@ -57,6 +67,7 @@ custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5cqyf")
 text = "Restart"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
@@ -68,7 +79,8 @@ custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-text = "Menu"
+theme_override_fonts/font = ExtResource("2_5cqyf")
+text = "Menuu"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="UI manager/Pause_menu/VBoxContainer"]
 layout_mode = 2
@@ -79,7 +91,8 @@ custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-text = "Quit"
+theme_override_fonts/font = ExtResource("2_5cqyf")
+text = "Выход"
 
 [connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer/Resume" to="UI manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer2/Restart" to="UI manager" method="_on_restart_pressed"]
