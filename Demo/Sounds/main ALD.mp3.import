@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx4c1vy07ltp8"
+path="res://.godot/imported/main ALD.mp3-e4c17a77175c3518477001490b21d956.mp3str"
+
+[deps]
+
+source_file="res://Sounds/main ALD.mp3"
+dest_files=["res://.godot/imported/main ALD.mp3-e4c17a77175c3518477001490b21d956.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

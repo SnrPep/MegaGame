@@ -23,9 +23,11 @@ func resume():
 
 func restart():
 	get_tree().reload_current_scene()
+	pause_play()
 
 func MainMenu():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	pause_play()
 
 func quit():
 	get_tree().quit()
