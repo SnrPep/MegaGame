@@ -92,7 +92,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5cqyf")
-text = "Выход"
+text = "Escape"
 
 [connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer/Resume" to="UI manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI manager/Pause_menu/VBoxContainer/HBoxContainer2/Restart" to="UI manager" method="_on_restart_pressed"]

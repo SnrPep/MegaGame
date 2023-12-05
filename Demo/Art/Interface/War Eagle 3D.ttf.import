@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://ba4y6r2mo6d8a"
+path="res://.godot/imported/War Eagle 3D.ttf-a17bc8a771df774a2e2117741221cded.fontdata"
+
+[deps]
+
+source_file="res://Art/Interface/War Eagle 3D.ttf"
+dest_files=["res://.godot/imported/War Eagle 3D.ttf-a17bc8a771df774a2e2117741221cded.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

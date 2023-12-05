@@ -105,7 +105,6 @@ text = "Quit"
 stream = ExtResource("5_bvj6p")
 volume_db = 1.0
 autoplay = true
-max_polyphony = 10
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Play" to="Menu_buttons" method="_on_play_pressed"]

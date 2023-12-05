@@ -48,6 +48,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	update_animation()
+	indoor()
 	
 	if position.y >= 500:
 		die()
@@ -86,6 +87,13 @@ func take_damage(damage_amount : int):
 		
 		if health <= 0:
 			die()
+
+func indoor():
+	var overlapping_objects = $Hitbox.get_overlapping_areas()
+	
+	for area in overlapping_objects:
+		if area.get_parent().is_in_group("TP") && Input.is_action_just_pressed("interaction"):
+			get_tree().change_scene_to_file("res://Level1.tscn")
 
 func iframes():
 	can_take_damage = false
