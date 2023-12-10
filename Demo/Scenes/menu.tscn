@@ -108,5 +108,5 @@ autoplay = true
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Play" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
