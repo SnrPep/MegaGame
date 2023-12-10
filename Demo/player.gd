@@ -80,7 +80,7 @@ func take_damage(damage_amount : int):
 		iframes()
 		health -= damage_amount
 		
-		get_node("Healthbar").update_healthbar(health, max_health)
+		$Healthbar.update_healthbar(health, max_health)
 		
 		hit = true
 		attacking = false

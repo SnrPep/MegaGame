@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv6vlk265d23n"]
+[gd_scene load_steps=6 format=3 uid="uid://bv6vlk265d23n"]
 
 [ext_resource type="Texture2D" uid="uid://btyfndevsk4q0" path="res://Art/Characters/Pink Man/Idle (32x32).png" id="1_5gg8f"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_qhcqm"]
@@ -10,14 +10,12 @@ height = 28.5
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oeca"]
 radius = 11.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xvg"]
+size = Vector2(189, 62)
+
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
 script = ExtResource("1_qhcqm")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_5gg8f")
-flip_h = true
-hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -30,8 +28,21 @@ target_position = Vector2(0, 19)
 
 [node name="Hitbox" type="Area2D" parent="."]
 
+[node name="Sprite" type="Sprite2D" parent="Hitbox"]
+texture = ExtResource("1_5gg8f")
+flip_h = true
+hframes = 11
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-0.33371, 2.83315)
 shape = SubResource("CapsuleShape2D_8oeca")
 
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+position = Vector2(-1.5, -14)
+shape = SubResource("RectangleShape2D_t4xvg")
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

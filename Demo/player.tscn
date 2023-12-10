@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=19 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
@@ -58,18 +58,24 @@ height = 28.0
 radius = 8.0
 height = 28.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_efaqg"]
-radius = 10.0499
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf1w8"]
+size = Vector2(20, 24)
+
+[sub_resource type="GDScript" id="GDScript_e3t7t"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
+speed = null
+jump_velocity = null
+attacking = null
+hit = null
 
 [node name="Healthbar" parent="." instance=ExtResource("2_7lqtd")]
-offset_left = -14.0
-offset_top = -18.0
-offset_right = -14.0
-offset_bottom = -18.0
+offset_left = -17.0
+offset_top = -21.0
+offset_right = -17.0
+offset_bottom = -21.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("12_ohj6d")
@@ -95,5 +101,6 @@ shape = SubResource("CapsuleShape2D_dbmsp")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(10, 6)
-shape = SubResource("CircleShape2D_efaqg")
+position = Vector2(12, 3)
+shape = SubResource("RectangleShape2D_jf1w8")
+script = SubResource("GDScript_e3t7t")

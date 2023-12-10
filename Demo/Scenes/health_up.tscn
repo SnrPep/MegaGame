@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb68bmtoyi55v"]
 
-[ext_resource type="Texture2D" uid="uid://d3mo5e7xk17xq" path="res://Art/interactive/Health potion.png" id="1_feo3x"]
 [ext_resource type="Script" path="res://Scenes/health_up.gd" id="1_kbsv5"]
+[ext_resource type="Texture2D" uid="uid://c3nc1pxbydah4" path="res://Art/interactive/HP_1.png" id="2_dloc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dedxf"]
-size = Vector2(10, 12)
+size = Vector2(12, 10)
 
 [node name="HealthUp" type="Node2D"]
 script = ExtResource("1_kbsv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_feo3x")
+texture = ExtResource("2_dloc0")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
