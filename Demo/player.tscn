@@ -93,10 +93,6 @@ size = Vector2(20, 24)
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
-speed = null
-jump_velocity = null
-attacking = null
-hit = null
 
 [node name="Healthbar" parent="." instance=ExtResource("2_7lqtd")]
 offset_left = -17.0
@@ -105,6 +101,7 @@ offset_right = -17.0
 offset_bottom = -21.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
 texture = ExtResource("3_8soq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

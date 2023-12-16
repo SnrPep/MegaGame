@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-
 var speed = -60.0
 var player = false
 var player_chase = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var facing_right = false
+var health = 1
+var hit = false
+var can_take_damage = true
 
 func _physics_process(delta):
 	if player_chase:
@@ -39,6 +41,15 @@ func _on_hitbox_area_entered(area):
 func die():
 	queue_free()
 
+func take_damage(damage_amount : int):
+	if can_take_damage:
+		iframes()
+		health -= damage_amount
+		
+		hit = true
+		
+		if health <= 0:
+			die()
 
 func _on_detection_body_entered(area):
 	player = area
@@ -48,3 +59,8 @@ func _on_detection_body_entered(area):
 func _on_detection_body_exited(area):
 	player = null
 	player_chase = false
+
+func iframes():
+	can_take_damage = false
+	await get_tree().create_timer(1).timeout
+	can_take_damage = true
