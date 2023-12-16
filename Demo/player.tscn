@@ -1,19 +1,34 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=32 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
+[ext_resource type="Texture2D" uid="uid://cvvdybpjuo2al" path="res://Art/Characters/Soul/Attack/Attack14.png" id="3_8soq5"]
 [ext_resource type="Texture2D" uid="uid://c8jbiocrxe2vu" path="res://Art/Characters/Soul/Idle/Idle9.png" id="3_qugym"]
 [ext_resource type="Texture2D" uid="uid://wss4ul4owxgl" path="res://Art/Characters/Soul/Idle/Idle1.png" id="4_uv8fn"]
 [ext_resource type="Texture2D" uid="uid://ns5hwt5uvyct" path="res://Art/Characters/Soul/Idle/Idle2.png" id="5_n3lkl"]
+[ext_resource type="Texture2D" uid="uid://dt4mf1jxyk26h" path="res://Art/Characters/Soul/Attack/Attack2.png" id="5_npshk"]
 [ext_resource type="Texture2D" uid="uid://cked2lfmbwdxq" path="res://Art/Characters/Soul/Idle/Idle4.png" id="6_lixu2"]
+[ext_resource type="Texture2D" uid="uid://xcc1shp0cq11" path="res://Art/Characters/Soul/Attack/Attack3.png" id="6_o4e6c"]
 [ext_resource type="Texture2D" uid="uid://brv0nl2rxesu4" path="res://Art/Characters/Soul/Idle/Idle5.png" id="7_d6nyb"]
+[ext_resource type="Texture2D" uid="uid://cfhw2e1cwvfxx" path="res://Art/Characters/Soul/Attack/Attack4.png" id="7_yao46"]
+[ext_resource type="Texture2D" uid="uid://rd2f5no1u44x" path="res://Art/Characters/Soul/Attack/Attack5.png" id="8_5owtk"]
 [ext_resource type="Texture2D" uid="uid://cjdhycv7ad807" path="res://Art/Characters/Soul/Idle/Idle6.png" id="8_jnsnx"]
+[ext_resource type="Texture2D" uid="uid://dspos8gqowvin" path="res://Art/Characters/Soul/Attack/Attack6.png" id="9_2i6jh"]
 [ext_resource type="Texture2D" uid="uid://bpcuh1dj3fqa7" path="res://Art/Characters/Soul/Idle/Idle7.png" id="9_k503d"]
+[ext_resource type="Texture2D" uid="uid://bl033i6y30kl2" path="res://Art/Characters/Soul/Attack/Attack7.png" id="10_bfxvi"]
 [ext_resource type="Texture2D" uid="uid://bpyocn7tjo3ln" path="res://Art/Characters/Soul/Idle/Idle8.png" id="10_k6ads"]
+[ext_resource type="Texture2D" uid="uid://bgdlpfm675jdv" path="res://Art/Characters/Soul/Attack/Attack8.png" id="11_acvqk"]
+[ext_resource type="Texture2D" uid="uid://bxnf784s8ge47" path="res://Art/Characters/Soul/Attack/Attack9.png" id="12_ax74f"]
 [ext_resource type="Texture2D" uid="uid://bqj0mouka3n1s" path="res://Art/Characters/Soul/Attack/Attack1.png" id="12_ohj6d"]
+[ext_resource type="Texture2D" uid="uid://bn65qu602xqr7" path="res://Art/Characters/Soul/Attack/Attack10.png" id="13_vvj2c"]
+[ext_resource type="Texture2D" uid="uid://ck4s3vgqn2jvj" path="res://Art/Characters/Soul/Attack/Attack11.png" id="14_0w8l3"]
+[ext_resource type="Texture2D" uid="uid://kgnrk73u4iv3" path="res://Art/Characters/Soul/Attack/Attack12.png" id="15_ytx0d"]
+[ext_resource type="Texture2D" uid="uid://cojyvcn2oywon" path="res://Art/Characters/Soul/Attack/Attack13.png" id="16_5p8qh"]
 
 [sub_resource type="Animation" id="Animation_csfaf"]
 resource_name = "attack"
+length = 0.26
+step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,10 +36,22 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": []
+"values": [ExtResource("12_ohj6d"), ExtResource("5_npshk"), ExtResource("6_o4e6c"), ExtResource("7_yao46"), ExtResource("8_5owtk"), ExtResource("9_2i6jh"), ExtResource("10_bfxvi"), ExtResource("11_acvqk"), ExtResource("12_ax74f"), ExtResource("13_vvj2c"), ExtResource("14_0w8l3"), ExtResource("15_ytx0d"), ExtResource("16_5p8qh"), ExtResource("3_8soq5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.22),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
 }
 
 [sub_resource type="Animation" id="Animation_qu5ur"]
@@ -78,7 +105,7 @@ offset_right = -17.0
 offset_bottom = -21.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("12_ohj6d")
+texture = ExtResource("3_8soq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
