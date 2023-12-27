@@ -5,7 +5,7 @@ class_name Player
 @onready var sprite = $Sprite2D
 
 @export var speed : float = 150.0
-@export var jump_velocity : float = -150.0
+@export var jump_velocity : float = -170.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
