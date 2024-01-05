@@ -655,6 +655,7 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2(247, 80)
 zoom = Vector2(1.2, 1.2)
 process_callback = 0
+limit_top = -10
 position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

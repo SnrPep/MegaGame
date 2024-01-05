@@ -55,7 +55,6 @@ func _on_detection_body_entered(area):
 	player = area
 	player_chase = true
 
-
 func _on_detection_body_exited(area):
 	player = null
 	player_chase = false

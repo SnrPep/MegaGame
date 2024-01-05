@@ -122,7 +122,6 @@ position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_dbmsp")
 
 [node name="AttackArea" type="Area2D" parent="."]
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(12, 3)
