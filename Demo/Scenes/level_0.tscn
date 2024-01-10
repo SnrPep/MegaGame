@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2h5iig7yjv0o"]
+[gd_scene load_steps=18 format=3 uid="uid://c2h5iig7yjv0o"]
 
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="1_gsv5q"]
 [ext_resource type="Texture2D" uid="uid://bcbsa4bc38avr" path="res://Art/Terrain/White_floor.png" id="2_23iup"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnv7gf5ffqeog" path="res://Art/layers/PressLBM.png" id="8_wydhg"]
 [ext_resource type="Texture2D" uid="uid://ds8gqstgb6f0o" path="res://Art/layers/PressE.png" id="9_2j7jt"]
 [ext_resource type="PackedScene" uid="uid://c24q5jsvwl202" path="res://Scenes/Dummy.tscn" id="10_87pqv"]
+[ext_resource type="PackedScene" uid="uid://drhqiu72klcx" path="res://Scenes/koly.tscn" id="13_6qoaf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhehg"]
 texture = ExtResource("2_23iup")
@@ -140,3 +141,6 @@ texture = ExtResource("8_wydhg")
 show_behind_parent = true
 position = Vector2(557, 95)
 texture = ExtResource("9_2j7jt")
+
+[node name="koly" parent="." instance=ExtResource("13_6qoaf")]
+position = Vector2(271, 177)

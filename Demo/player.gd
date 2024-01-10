@@ -33,7 +33,7 @@ func _physics_process(delta):
 		sprite.scale.x = abs(sprite.scale.x) * -1
 	if Input.is_action_just_pressed("right"):
 		sprite.scale.x = abs(sprite.scale.x)
-	
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -49,9 +49,11 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation()
 	indoor()
+	dialogue_area()
 	
 	if position.y >= 500:
 		die()
+	
 
 func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
@@ -94,6 +96,16 @@ func indoor():
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("TP") && Input.is_action_just_pressed("interaction"):
 			get_tree().change_scene_to_file("res://Level1.tscn")
+			
+
+func dialogue_area():
+	var overlapping_objects = $Hitbox.get_overlapping_areas()
+	
+	for area in overlapping_objects:
+		if area.get_parent().is_in_group("Kolya") && Input.is_action_just_pressed("Dialogue"):
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/main.dialogue"), "start")
+			return
+	
 
 func iframes():
 	can_take_damage = false

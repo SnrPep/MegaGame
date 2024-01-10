@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://drhqiu72klcx"]
+
+[ext_resource type="Texture2D" uid="uid://oc0fxl5l1ltp" path="res://Art/Characters/Pioners/Pioner.png" id="1_2y1th"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcv1c"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uum7t"]
+
+[node name="koly" type="CharacterBody2D" groups=["Kolya"]]
+show_behind_parent = true
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2y1th")
+
+[node name="razgovory" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="razgovory"]
+shape = SubResource("CircleShape2D_bcv1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_uum7t")

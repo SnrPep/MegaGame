@@ -38,6 +38,22 @@
 [ext_resource type="Texture2D" uid="uid://jmahgm5ci7q1" path="res://Art/Characters/Soul/run/6.png" id="36_r2q83"]
 [ext_resource type="Texture2D" uid="uid://b0vvup2d2u8qb" path="res://Art/Characters/Soul/run/7.png" id="37_qufqy"]
 
+[sub_resource type="Animation" id="Animation_kqsbn"]
+resource_name = "Jump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("25_gyghj"), ExtResource("26_3ct34")]
+}
+
 [sub_resource type="Animation" id="Animation_csfaf"]
 resource_name = "attack"
 length = 0.26
@@ -67,6 +83,22 @@ tracks/1/keys = {
 "values": [null]
 }
 
+[sub_resource type="Animation" id="Animation_xkl0o"]
+resource_name = "fall"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("27_7rr0r"), ExtResource("28_xu1wl"), ExtResource("29_ddcd8")]
+}
+
 [sub_resource type="Animation" id="Animation_qu5ur"]
 resource_name = "idle"
 length = 1.75
@@ -82,38 +114,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("4_uv8fn"), ExtResource("5_n3lkl"), ExtResource("6_lixu2"), ExtResource("4_uv8fn"), ExtResource("7_d6nyb"), ExtResource("8_jnsnx"), ExtResource("9_k503d"), ExtResource("10_k6ads"), ExtResource("3_qugym")]
-}
-
-[sub_resource type="Animation" id="Animation_kqsbn"]
-resource_name = "Jump"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("25_gyghj"), ExtResource("26_3ct34")]
-}
-
-[sub_resource type="Animation" id="Animation_xkl0o"]
-resource_name = "fall"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("27_7rr0r"), ExtResource("28_xu1wl"), ExtResource("29_ddcd8")]
 }
 
 [sub_resource type="Animation" id="Animation_n04aw"]
