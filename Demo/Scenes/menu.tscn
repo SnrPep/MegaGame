@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://bu8m1e7wf0wyt"]
 
 [ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="1_u4vja"]
-[ext_resource type="Texture2D" uid="uid://doxoigxxxirf8" path="res://Art/Terrain/menuback.jpg" id="2_7fjk7"]
 [ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_l3juj"]
 [ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_iamss"]
 [ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="5_bvj6p"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cc5sh"]
+load_path = "res://.godot/imported/menuback.jpg-1cec757aed31b362d9a01da89d86a653.ctex"
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,7 +22,7 @@ script = ExtResource("1_u4vja")
 [node name="MainMenu" type="TextureRect" parent="Menu_buttons"]
 offset_right = 360.0
 offset_bottom = 240.0
-texture = ExtResource("2_7fjk7")
+texture = SubResource("CompressedTexture2D_cc5sh")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Menu_buttons/MainMenu"]
@@ -67,6 +69,7 @@ custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 focus_neighbor_top = NodePath("../../HBoxContainer2/Quit")
+focus_neighbor_bottom = NodePath("../../HBoxContainer3/Settings")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_iamss")
@@ -77,11 +80,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Play" type="Button" parent="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3"]
+[node name="Settings" type="Button" parent="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
-focus_neighbor_top = NodePath("../../HBoxContainer2/Quit")
+focus_neighbor_top = NodePath("../../HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/Quit")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_iamss")
@@ -95,6 +99,7 @@ alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../../HBoxContainer3/Settings")
 focus_neighbor_bottom = NodePath("../../HBoxContainer/Play")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -107,6 +112,6 @@ volume_db = 1.0
 autoplay = true
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Play" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Settings" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]

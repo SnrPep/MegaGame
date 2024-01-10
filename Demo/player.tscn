@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=48 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
@@ -24,6 +24,19 @@
 [ext_resource type="Texture2D" uid="uid://ck4s3vgqn2jvj" path="res://Art/Characters/Soul/Attack/Attack11.png" id="14_0w8l3"]
 [ext_resource type="Texture2D" uid="uid://kgnrk73u4iv3" path="res://Art/Characters/Soul/Attack/Attack12.png" id="15_ytx0d"]
 [ext_resource type="Texture2D" uid="uid://cojyvcn2oywon" path="res://Art/Characters/Soul/Attack/Attack13.png" id="16_5p8qh"]
+[ext_resource type="Texture2D" uid="uid://c2acc1bggyqyj" path="res://Art/Characters/Soul/Jump/0.png" id="25_gyghj"]
+[ext_resource type="Texture2D" uid="uid://ca7xlyvqhnxo3" path="res://Art/Characters/Soul/Jump/1.png" id="26_3ct34"]
+[ext_resource type="Texture2D" uid="uid://blr3uylojvg6p" path="res://Art/Characters/Soul/Fall/2.png" id="27_7rr0r"]
+[ext_resource type="Texture2D" uid="uid://dk867joyubayd" path="res://Art/Characters/Soul/Fall/3.png" id="28_xu1wl"]
+[ext_resource type="Texture2D" uid="uid://cx8244p1jsna0" path="res://Art/Characters/Soul/Fall/4.png" id="29_ddcd8"]
+[ext_resource type="Texture2D" uid="uid://dp84xuvqe8ire" path="res://Art/Characters/Soul/run/0 (2).png" id="30_70fuy"]
+[ext_resource type="Texture2D" uid="uid://3xg4bq2w0iut" path="res://Art/Characters/Soul/run/1 (2).png" id="31_10w44"]
+[ext_resource type="Texture2D" uid="uid://c47oglc5edtwt" path="res://Art/Characters/Soul/run/2 (2).png" id="32_spc58"]
+[ext_resource type="Texture2D" uid="uid://dy74kwc3ngy8c" path="res://Art/Characters/Soul/run/3 (2).png" id="33_idl1s"]
+[ext_resource type="Texture2D" uid="uid://m1gt7uyyurg3" path="res://Art/Characters/Soul/run/4 (2).png" id="34_1omfu"]
+[ext_resource type="Texture2D" uid="uid://tmof1yugtxl3" path="res://Art/Characters/Soul/run/5.png" id="35_qinlh"]
+[ext_resource type="Texture2D" uid="uid://jmahgm5ci7q1" path="res://Art/Characters/Soul/run/6.png" id="36_r2q83"]
+[ext_resource type="Texture2D" uid="uid://b0vvup2d2u8qb" path="res://Art/Characters/Soul/run/7.png" id="37_qufqy"]
 
 [sub_resource type="Animation" id="Animation_csfaf"]
 resource_name = "attack"
@@ -71,10 +84,61 @@ tracks/0/keys = {
 "values": [ExtResource("4_uv8fn"), ExtResource("5_n3lkl"), ExtResource("6_lixu2"), ExtResource("4_uv8fn"), ExtResource("7_d6nyb"), ExtResource("8_jnsnx"), ExtResource("9_k503d"), ExtResource("10_k6ads"), ExtResource("3_qugym")]
 }
 
+[sub_resource type="Animation" id="Animation_kqsbn"]
+resource_name = "Jump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("25_gyghj"), ExtResource("26_3ct34")]
+}
+
+[sub_resource type="Animation" id="Animation_xkl0o"]
+resource_name = "fall"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("27_7rr0r"), ExtResource("28_xu1wl"), ExtResource("29_ddcd8")]
+}
+
+[sub_resource type="Animation" id="Animation_n04aw"]
+resource_name = "run"
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("30_70fuy"), ExtResource("31_10w44"), ExtResource("32_spc58"), ExtResource("33_idl1s"), ExtResource("34_1omfu"), ExtResource("35_qinlh"), ExtResource("36_r2q83"), ExtResource("37_qufqy")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20r7q"]
 _data = {
+"Jump": SubResource("Animation_kqsbn"),
 "attack": SubResource("Animation_csfaf"),
-"idle": SubResource("Animation_qu5ur")
+"fall": SubResource("Animation_xkl0o"),
+"idle": SubResource("Animation_qu5ur"),
+"run": SubResource("Animation_n04aw")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ersjg"]
@@ -102,7 +166,7 @@ offset_bottom = -21.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-texture = ExtResource("3_8soq5")
+texture = ExtResource("29_ddcd8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

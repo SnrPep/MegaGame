@@ -70,9 +70,9 @@ func update_animation():
 		else:
 			animation.play("idle")
 		
-		if velocity.y < 0:
-			animation.play("jump")
-		else:
+		if velocity.y < 0 && velocity.y != 0:
+			animation.play("Jump")
+		elif velocity.y != 0:
 			animation.play("fall")
 
 func take_damage(damage_amount : int):
