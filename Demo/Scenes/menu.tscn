@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="5_bvj6p"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cc5sh"]
-load_path = "res://.godot/imported/menuback.jpg-1cec757aed31b362d9a01da89d86a653.ctex"
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -113,5 +112,5 @@ autoplay = true
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Settings" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]

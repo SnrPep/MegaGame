@@ -8,6 +8,8 @@ var player : Player
 
 var paused = false
 
+var dialogue_playing = false
+
 func respawn_player():
 	player.health = player.max_health
 	if current_checkpoint != null:
@@ -34,3 +36,7 @@ func quit():
 
 func play():
 	get_tree().change_scene_to_file("res://Scenes/level_0.tscn")
+
+func game_paused():
+	paused = !paused
+	get_tree().paused = paused

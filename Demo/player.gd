@@ -29,22 +29,23 @@ func process(delta):
 		attack()
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("left"):
-		sprite.scale.x = abs(sprite.scale.x) * -1
-	if Input.is_action_just_pressed("right"):
-		sprite.scale.x = abs(sprite.scale.x)
+	if !GameManager.dialogue_playing:
+		if Input.is_action_just_pressed("left"):
+			sprite.scale.x = abs(sprite.scale.x) * -1
+		if Input.is_action_just_pressed("right"):
+			sprite.scale.x = abs(sprite.scale.x)
+			
+		if not is_on_floor():
+			velocity.y += gravity * delta
 		
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	
-	if Input.is_action_just_pressed("jump") && is_on_floor():
-		velocity.y = jump_velocity
-	
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		if Input.is_action_just_pressed("jump") && is_on_floor():
+			velocity.y = jump_velocity
+		
+		var direction = Input.get_axis("left", "right")
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
 	
 	move_and_slide()
 	update_animation()
@@ -102,10 +103,9 @@ func dialogue_area():
 	var overlapping_objects = $Hitbox.get_overlapping_areas()
 	
 	for area in overlapping_objects:
-		if area.get_parent().is_in_group("Kolya") && Input.is_action_just_pressed("Dialogue"):
+		if area.get_parent().is_in_group("Kolya") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/main.dialogue"), "start")
 			return
-	
 
 func iframes():
 	can_take_damage = false
