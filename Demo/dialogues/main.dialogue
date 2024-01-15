@@ -10,4 +10,5 @@ set GameManager.dialogue_playing = true
 Подсознание: Борис, время идёт. Прояви себя.
 Борис: ЧТО???
 set GameManager.dialogue_playing = false
+set GameManager.kolya_free = true
 => END

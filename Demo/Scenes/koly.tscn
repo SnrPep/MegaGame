@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://drhqiu72klcx"]
+[gd_scene load_steps=30 format=3 uid="uid://drhqiu72klcx"]
 
 [ext_resource type="Texture2D" uid="uid://c81vcatgga1s6" path="res://Art/Characters/Dark Soul/BLM.png" id="1_6gesx"]
+[ext_resource type="Script" path="res://Scripts/koly.gd" id="1_gk1k1"]
 [ext_resource type="Texture2D" uid="uid://dmgtoe4aox026" path="res://Art/Characters/Dark Soul/Частицы.png" id="2_ime2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5r5q4"]
@@ -181,6 +182,7 @@ radius = 18.0
 [node name="koly" type="CharacterBody2D" groups=["Kolya"]]
 show_behind_parent = true
 collision_layer = 2
+script = ExtResource("1_gk1k1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h7ijl")
