@@ -12,7 +12,7 @@ func _ready():
 func activate():
 	GameManager.current_checkpoint = self
 	activated = true
-	$AnimationPlayer.play("activated")
+	$AnimatedSprite2D.play("up_flag")
 
 
 func _on_area_2d_area_entered(area):

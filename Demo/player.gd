@@ -52,7 +52,7 @@ func _physics_process(delta):
 	indoor()
 	dialogue_area()
 	
-	if position.y >= 500:
+	if position.y >= 200:
 		die()
 	
 

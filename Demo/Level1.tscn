@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=93 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://bd7ypuob4ghps" path="res://Art/Trees/PNG/jungle_tree_11.png" id="37_f1kvd"]
 [ext_resource type="Texture2D" uid="uid://c3hv87m0scsg" path="res://Art/Characters/Pioners/Пионер1.png" id="42_3b32c"]
 [ext_resource type="Texture2D" uid="uid://cyf3wbat6tx23" path="res://Art/Characters/Pioners/Пионерка 1.png" id="44_leahb"]
+[ext_resource type="Texture2D" uid="uid://oc0fxl5l1ltp" path="res://Art/Characters/Pioners/Pioner.png" id="46_w7y8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ynf"]
 texture = ExtResource("18_h6141")
@@ -1816,7 +1817,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fast_pioner ",
-"speed": 60.0
+"speed": 15.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7g0pp"]
@@ -1855,35 +1856,67 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wocuf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iol86"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_whkd3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewltd"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mhje"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmqjx"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqju7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8wlw"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hxy4b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jopx"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhjig"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugrtq"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4256e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dirb7"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1mk7a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1m20"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c2r5"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doir2"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqfwx"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mddaj"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mtw3"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y64w"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydkun"]
+atlas = ExtResource("42_3b32c")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl4dr"]
 atlas = ExtResource("42_3b32c")
 region = Rect2(0, 224, 32, 32)
 
@@ -1891,31 +1924,55 @@ region = Rect2(0, 224, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wocuf")
+"texture": SubResource("AtlasTexture_iol86")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_whkd3")
+"texture": SubResource("AtlasTexture_ewltd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4mhje")
+"texture": SubResource("AtlasTexture_qmqjx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hqju7")
+"texture": SubResource("AtlasTexture_o8wlw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hxy4b")
+"texture": SubResource("AtlasTexture_1jopx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nhjig")
+"texture": SubResource("AtlasTexture_ugrtq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4256e")
+"texture": SubResource("AtlasTexture_dirb7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1mk7a")
+"texture": SubResource("AtlasTexture_o1m20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c2r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doir2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqfwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mddaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mtw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y64w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydkun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl4dr")
 }],
 "loop": true,
-"name": &"pioner",
+"name": &"anim_pioner",
 "speed": 5.0
 }]
 
@@ -1980,7 +2037,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"pionerka",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="Level1" type="Node2D"]
@@ -2480,10 +2537,11 @@ texture = ExtResource("16_fankj")
 [node name="Builds" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Pioner_1" type="AnimatedSprite2D" parent="ParallaxBackground/Builds"]
-position = Vector2(134, 80)
+position = Vector2(135, 80)
 sprite_frames = SubResource("SpriteFrames_vpy8r")
 animation = &"fast_pioner "
 autoplay = "fast_pioner "
+frame_progress = 0.506603
 flip_v = true
 
 [node name="Fire" type="AnimatedSprite2D" parent="ParallaxBackground/Builds"]
@@ -2684,22 +2742,114 @@ texture = ExtResource("35_ojm3l")
 
 [node name="Pioners" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Pioner-2" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
-position = Vector2(175, 128)
-sprite_frames = SubResource("SpriteFrames_qklfa")
-animation = &"pioner"
-autoplay = "pioner"
-flip_h = true
-
 [node name="Pioner-3" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
 position = Vector2(138, 128)
 sprite_frames = SubResource("SpriteFrames_qklfa")
-animation = &"pioner"
-autoplay = "pioner"
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
 
 [node name="Pionerka-1" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
 position = Vector2(267, 130)
 sprite_frames = SubResource("SpriteFrames_hubkb")
 animation = &"pionerka"
+autoplay = "pionerka"
+frame_progress = 0.726372
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(289, 130)
+texture = ExtResource("46_w7y8e")
+flip_h = true
+
+[node name="Pioner-4" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(180, 129)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+flip_h = true
+
+[node name="Pioner-5" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+self_modulate = Color(0.682353, 0.682353, 0.682353, 1)
+position = Vector2(361, 135)
+scale = Vector2(0.59375, 0.59375)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+
+[node name="Pioner-6" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(453, 130)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+
+[node name="Pionerka-2" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(493, 129)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame = 6
+frame_progress = 0.948423
+flip_h = true
+
+[node name="Pionerka-3" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(436, 130)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame_progress = 0.455383
+
+[node name="Pionerka-4" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+self_modulate = Color(0.654902, 0.635294, 0.658824, 1)
+position = Vector2(682, 130)
+scale = Vector2(0.84375, 0.84375)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame_progress = 0.455383
+
+[node name="Pionerka-5" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+self_modulate = Color(0.654902, 0.635294, 0.658824, 1)
+position = Vector2(705, 130)
+scale = Vector2(0.84375, 0.84375)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame_progress = 0.455383
+flip_h = true
+
+[node name="Pioner-7" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(994, 128)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+
+[node name="Pioner-8" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(1347, 129)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+
+[node name="Pioner-11" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+self_modulate = Color(0.588235, 0.588235, 0.588235, 1)
+position = Vector2(1385, 131)
+scale = Vector2(0.875, 0.875)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+flip_h = true
+
+[node name="Pioner-9" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+self_modulate = Color(0.588235, 0.588235, 0.588235, 1)
+position = Vector2(1360, 131)
+scale = Vector2(0.875, 0.875)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+
+[node name="Pioner-10" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(1395, 129)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+flip_h = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("33_78br0")]
