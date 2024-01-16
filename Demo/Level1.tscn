@@ -1,10 +1,9 @@
-[gd_scene load_steps=93 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=94 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
 [ext_resource type="Texture2D" uid="uid://detv0cw5mmbsi" path="res://Art/Terrain/Terrain (16x16) Day_New.png" id="4_5aj65"]
 [ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="4_wpsdf"]
-[ext_resource type="PackedScene" uid="uid://cb68bmtoyi55v" path="res://Scenes/health_up.tscn" id="5_3fowj"]
 [ext_resource type="Texture2D" uid="uid://de3nh70230bjo" path="res://Art/Terrain/New Terrain (16x16).png" id="5_tywij"]
 [ext_resource type="Texture2D" uid="uid://cesgga8s03663" path="res://Art/layers/Moon_Phase_111.png" id="6_eu62u"]
 [ext_resource type="Texture2D" uid="uid://irmwkl08wcyt" path="res://Art/layers/parallax-mountain-bg day.png" id="8_0ysks"]
@@ -47,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://c3hv87m0scsg" path="res://Art/Characters/Pioners/Пионер1.png" id="42_3b32c"]
 [ext_resource type="Texture2D" uid="uid://cyf3wbat6tx23" path="res://Art/Characters/Pioners/Пионерка 1.png" id="44_leahb"]
 [ext_resource type="Texture2D" uid="uid://oc0fxl5l1ltp" path="res://Art/Characters/Pioners/Pioner.png" id="46_w7y8e"]
+[ext_resource type="PackedScene" uid="uid://t4cn1ifh85i4" path="res://Scenes/tp_2.tscn" id="47_a6sj4"]
+[ext_resource type="PackedScene" uid="uid://bk32pgx0mpayx" path="res://Scenes/enemy_boy.tscn" id="48_osbql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ynf"]
 texture = ExtResource("18_h6141")
@@ -2043,11 +2044,10 @@ animations = [{
 [node name="Level1" type="Node2D"]
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_wpsdf")]
-position = Vector2(96, 109)
-spawnpoint = true
+position = Vector2(94, 132)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_wpsdf")]
-position = Vector2(539, 110)
+position = Vector2(538, 132)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tx73l")
@@ -2074,9 +2074,6 @@ position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
-
-[node name="HealthUp" parent="." instance=ExtResource("5_3fowj")]
-position = Vector2(348, 136)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(287, 65)
@@ -2853,3 +2850,9 @@ autoplay = "anim_pioner"
 flip_h = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("33_78br0")]
+
+[node name="tp_2" parent="." instance=ExtResource("47_a6sj4")]
+position = Vector2(1287, 143)
+
+[node name="enemy_boy" parent="." instance=ExtResource("48_osbql")]
+position = Vector2(-1374, 128)

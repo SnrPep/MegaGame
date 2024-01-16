@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=76 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="PackedScene" uid="uid://bo53jhrd8frg2" path="res://Scenes/healthbar.tscn" id="2_7lqtd"]
 [ext_resource type="Texture2D" uid="uid://cvvdybpjuo2al" path="res://Art/Characters/Soul/Attack/Attack14.png" id="3_8soq5"]
+[ext_resource type="Texture2D" uid="uid://o4yqeupdjjjc" path="res://Art/Characters/Soul/Death/1.png" id="3_acta2"]
 [ext_resource type="Texture2D" uid="uid://c8jbiocrxe2vu" path="res://Art/Characters/Soul/Idle/Idle9.png" id="3_qugym"]
 [ext_resource type="Texture2D" uid="uid://wss4ul4owxgl" path="res://Art/Characters/Soul/Idle/Idle1.png" id="4_uv8fn"]
 [ext_resource type="Texture2D" uid="uid://ns5hwt5uvyct" path="res://Art/Characters/Soul/Idle/Idle2.png" id="5_n3lkl"]
@@ -37,6 +38,32 @@
 [ext_resource type="Texture2D" uid="uid://tmof1yugtxl3" path="res://Art/Characters/Soul/run/5.png" id="35_qinlh"]
 [ext_resource type="Texture2D" uid="uid://jmahgm5ci7q1" path="res://Art/Characters/Soul/run/6.png" id="36_r2q83"]
 [ext_resource type="Texture2D" uid="uid://b0vvup2d2u8qb" path="res://Art/Characters/Soul/run/7.png" id="37_qufqy"]
+[ext_resource type="Texture2D" uid="uid://o2ax0bdpmsxn" path="res://Art/Characters/Soul/Death/2.png" id="39_al6h6"]
+[ext_resource type="Texture2D" uid="uid://da5p30x68ocbw" path="res://Art/Characters/Soul/Death/3.png" id="40_ta5x6"]
+[ext_resource type="Texture2D" uid="uid://ch24kllk68api" path="res://Art/Characters/Soul/Death/4.png" id="41_io74n"]
+[ext_resource type="Texture2D" uid="uid://ipdjgm56muwb" path="res://Art/Characters/Soul/Death/5.png" id="42_tb4qi"]
+[ext_resource type="Texture2D" uid="uid://bdja5bo0htgil" path="res://Art/Characters/Soul/Death/6.png" id="43_mv2ts"]
+[ext_resource type="Texture2D" uid="uid://pwobt2omjoas" path="res://Art/Characters/Soul/Death/7.png" id="44_00oj6"]
+[ext_resource type="Texture2D" uid="uid://dwv5di8pm4f7v" path="res://Art/Characters/Soul/Death/8.png" id="45_7yx36"]
+[ext_resource type="Texture2D" uid="uid://ccwb3lnxgqqn1" path="res://Art/Characters/Soul/Death/9.png" id="46_8j1df"]
+[ext_resource type="Texture2D" uid="uid://sdxx2r4kk1pk" path="res://Art/Characters/Soul/Death/10.png" id="47_kmlgt"]
+[ext_resource type="Texture2D" uid="uid://dv82k0id6gvbp" path="res://Art/Characters/Soul/Death/11.png" id="48_16e5u"]
+[ext_resource type="Texture2D" uid="uid://dgytii8tuao5n" path="res://Art/Characters/Soul/Death/12.png" id="49_430b0"]
+[ext_resource type="Texture2D" uid="uid://c3n3i6svlesdg" path="res://Art/Characters/Soul/Death/13.png" id="50_ay45c"]
+[ext_resource type="Texture2D" uid="uid://e8i6qbunevdt" path="res://Art/Characters/Soul/Death/14.png" id="51_8t2pq"]
+[ext_resource type="Texture2D" uid="uid://81ojdxgi7ryo" path="res://Art/Characters/Soul/Death/15.png" id="52_5ecb1"]
+[ext_resource type="Texture2D" uid="uid://nt4675x3j7tg" path="res://Art/Characters/Soul/Death/16.png" id="53_xl281"]
+[ext_resource type="Texture2D" uid="uid://bky7mcop5n7mj" path="res://Art/Characters/Soul/Death/17.png" id="54_kyiy7"]
+[ext_resource type="Texture2D" uid="uid://cj8bwvcwmpwxt" path="res://Art/Characters/Soul/Death/18.png" id="55_cbdu5"]
+[ext_resource type="Texture2D" uid="uid://beikvsu5csib2" path="res://Art/Characters/Soul/Death/19.png" id="56_oumji"]
+[ext_resource type="Texture2D" uid="uid://dvdb4syiebprv" path="res://Art/Characters/Soul/Death/20.png" id="57_s0ad4"]
+[ext_resource type="Texture2D" uid="uid://gg1it7d3mtai" path="res://Art/Characters/Soul/Death/21.png" id="58_2qxak"]
+[ext_resource type="Texture2D" uid="uid://cc1nfb1hytl10" path="res://Art/Characters/Soul/Death/22.png" id="59_dnjbp"]
+[ext_resource type="Texture2D" uid="uid://bwfm6avw33lxa" path="res://Art/Characters/Soul/Death/23.png" id="60_6pt0v"]
+[ext_resource type="Texture2D" uid="uid://dpjiwj417hocf" path="res://Art/Characters/Soul/Death/24.png" id="61_ei8fw"]
+[ext_resource type="Texture2D" uid="uid://co8np6msxuh10" path="res://Art/Characters/Soul/Death/25.png" id="62_xk0cj"]
+[ext_resource type="Texture2D" uid="uid://com2nhbes8ukc" path="res://Art/Characters/Soul/Death/26.png" id="63_vn7e8"]
+[ext_resource type="Texture2D" uid="uid://bt002gm53hoy" path="res://Art/Characters/Soul/Death/27.png" id="64_hclgd"]
 
 [sub_resource type="Animation" id="Animation_kqsbn"]
 resource_name = "Jump"
@@ -132,10 +159,27 @@ tracks/0/keys = {
 "values": [ExtResource("30_70fuy"), ExtResource("31_10w44"), ExtResource("32_spc58"), ExtResource("33_idl1s"), ExtResource("34_1omfu"), ExtResource("35_qinlh"), ExtResource("36_r2q83"), ExtResource("37_qufqy")]
 }
 
+[sub_resource type="Animation" id="Animation_y1c31"]
+resource_name = "death"
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.68, 0.72, 0.76, 0.8, 0.84, 0.88, 0.92, 0.96, 0.98, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_acta2"), ExtResource("39_al6h6"), ExtResource("40_ta5x6"), ExtResource("41_io74n"), ExtResource("42_tb4qi"), ExtResource("43_mv2ts"), ExtResource("44_00oj6"), ExtResource("45_7yx36"), ExtResource("46_8j1df"), ExtResource("47_kmlgt"), ExtResource("48_16e5u"), ExtResource("49_430b0"), ExtResource("50_ay45c"), ExtResource("51_8t2pq"), ExtResource("52_5ecb1"), ExtResource("53_xl281"), ExtResource("54_kyiy7"), ExtResource("55_cbdu5"), ExtResource("56_oumji"), ExtResource("57_s0ad4"), ExtResource("58_2qxak"), ExtResource("59_dnjbp"), ExtResource("60_6pt0v"), ExtResource("61_ei8fw"), ExtResource("62_xk0cj"), ExtResource("63_vn7e8"), ExtResource("64_hclgd")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20r7q"]
 _data = {
 "Jump": SubResource("Animation_kqsbn"),
 "attack": SubResource("Animation_csfaf"),
+"death": SubResource("Animation_y1c31"),
 "fall": SubResource("Animation_xkl0o"),
 "idle": SubResource("Animation_qu5ur"),
 "run": SubResource("Animation_n04aw")
@@ -166,7 +210,7 @@ offset_bottom = -21.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-texture = ExtResource("29_ddcd8")
+texture = ExtResource("3_acta2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

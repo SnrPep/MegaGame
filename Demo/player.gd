@@ -67,7 +67,7 @@ func attack():
 	animation.play("attack")
 
 func update_animation():
-	if !attacking:
+	if !attacking && can_take_damage:
 		if velocity.x != 0:
 			animation.play("run")
 		else:
@@ -89,6 +89,8 @@ func take_damage(damage_amount : int):
 		attacking = false
 		
 		if health <= 0:
+			animation.play("death")
+			await get_tree().create_timer(0.95).timeout
 			die()
 
 func indoor():
@@ -97,7 +99,10 @@ func indoor():
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("TP") && Input.is_action_just_pressed("interaction"):
 			get_tree().change_scene_to_file("res://Level1.tscn")
-			
+		if area.get_parent().is_in_group("TP2") && Input.is_action_just_pressed("interaction"):
+			get_tree().change_scene_to_file("res://Scenes/level1_night.tscn")
+		if area.get_parent().is_in_group("TP3"):
+			get_tree().change_scene_to_file("res://Scenes/forest.tscn")
 
 func dialogue_area():
 	var overlapping_objects = $Hitbox.get_overlapping_areas()
