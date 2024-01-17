@@ -9,6 +9,6 @@ set GameManager.dialogue_playing = true
 Борис:  Что ты хочешь этим сказать?
 Подсознание: Борис, время идёт. Прояви себя.
 Борис: ЧТО???
-set GameManager.dialogue_playing = false
 set GameManager.kolya_free = true
+set GameManager.dialogue_playing = false
 => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=93 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
@@ -47,7 +47,6 @@
 [ext_resource type="Texture2D" uid="uid://cyf3wbat6tx23" path="res://Art/Characters/Pioners/Пионерка 1.png" id="44_leahb"]
 [ext_resource type="Texture2D" uid="uid://oc0fxl5l1ltp" path="res://Art/Characters/Pioners/Pioner.png" id="46_w7y8e"]
 [ext_resource type="PackedScene" uid="uid://t4cn1ifh85i4" path="res://Scenes/tp_2.tscn" id="47_a6sj4"]
-[ext_resource type="PackedScene" uid="uid://bk32pgx0mpayx" path="res://Scenes/enemy_boy.tscn" id="48_osbql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ynf"]
 texture = ExtResource("18_h6141")
@@ -2853,6 +2852,3 @@ flip_h = true
 
 [node name="tp_2" parent="." instance=ExtResource("47_a6sj4")]
 position = Vector2(1287, 143)
-
-[node name="enemy_boy" parent="." instance=ExtResource("48_osbql")]
-position = Vector2(-1374, 128)
