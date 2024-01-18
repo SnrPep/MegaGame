@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://c2rmmg0x00176"]
+[gd_scene load_steps=96 format=3 uid="uid://c2rmmg0x00176"]
 
 [ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="1_ec1qp"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_po8k7"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dasmmtx6c22sh" path="res://Scenes/pause_menu.tscn" id="41_eb7a2"]
 [ext_resource type="Texture2D" uid="uid://de3nh70230bjo" path="res://Art/Terrain/New Terrain (16x16).png" id="42_c3lhi"]
 [ext_resource type="PackedScene" uid="uid://c7he71g6tn3wh" path="res://Scenes/tp_3.tscn" id="43_13w5m"]
+[ext_resource type="PackedScene" uid="uid://dpnbf3ulqukl6" path="res://Scenes/dial_6.tscn" id="44_apt0b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_euqa7"]
 atlas = ExtResource("33_mwrfl")
@@ -1815,3 +1816,6 @@ layer_0/tile_data = PackedInt32Array(655355, 65536, 0, 655354, 65536, 0, 655356,
 
 [node name="tp_3" parent="." instance=ExtResource("43_13w5m")]
 position = Vector2(3229, 135)
+
+[node name="Node2D" parent="." instance=ExtResource("44_apt0b")]
+position = Vector2(1166, 131)

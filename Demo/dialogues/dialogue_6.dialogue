@@ -1,0 +1,7 @@
+~ start
+set GameManager.dialogue_playing = true
+Мысли: О, боже, как я мог так облажаться, все уже собрались у костра.
+Мысли: Надо поторопиться!
+
+set GameManager.dialogue_playing = false
+=> END

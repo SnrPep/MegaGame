@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjb04y3bcifso"]
+[gd_scene load_steps=15 format=3 uid="uid://cjb04y3bcifso"]
 
 [ext_resource type="Texture2D" uid="uid://de3nh70230bjo" path="res://Art/Terrain/New Terrain (16x16).png" id="1_2tcqa"]
 [ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="1_yktty"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ch0av7afm7pmm" path="res://Art/layers/parallax-forest-trees.png" id="5_b663b"]
 [ext_resource type="Texture2D" uid="uid://bofpxt7btaktm" path="res://Art/layers/parallax-forest-trees2.png" id="5_c4klc"]
 [ext_resource type="Texture2D" uid="uid://dbdg8hyppk1qv" path="res://Art/layers/parallax-forest-trees3.png" id="6_sl5nv"]
+[ext_resource type="PackedScene" uid="uid://bk32pgx0mpayx" path="res://Scenes/enemy_boy.tscn" id="10_3y5y7"]
+[ext_resource type="PackedScene" uid="uid://go3qr33xs81o" path="res://Scenes/enemy_girl.tscn" id="11_xvr6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2uv0t"]
 texture = ExtResource("1_2tcqa")
@@ -1251,3 +1253,45 @@ position = Vector2(-1, -15)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_b663b")
 centered = false
+
+[node name="enemy_boy" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(272, 160)
+
+[node name="enemy_boy2" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(569, 144)
+
+[node name="enemy_girl" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(634, 144)
+
+[node name="enemy_girl2" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(831, 128)
+
+[node name="enemy_boy3" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(1170, 145)
+
+[node name="enemy_girl3" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(1380, 80)
+
+[node name="enemy_girl4" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(1373, 160)
+
+[node name="enemy_boy4" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(1538, 160)
+
+[node name="enemy_boy5" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(1754, 160)
+
+[node name="enemy_girl5" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(1892, 160)
+
+[node name="enemy_girl6" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(2028, 160)
+
+[node name="enemy_boy6" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(2114, 160)
+
+[node name="enemy_girl7" parent="." instance=ExtResource("11_xvr6h")]
+position = Vector2(2205, 159)
+
+[node name="enemy_boy7" parent="." instance=ExtResource("10_3y5y7")]
+position = Vector2(2332, 160)

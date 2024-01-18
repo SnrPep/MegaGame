@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5r5q7v1v2r2r"]
+
+[ext_resource type="Texture2D" uid="uid://reedwc672v8d" path="res://Art/interactive/Exclamation_point.png" id="1_8quug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he5gq"]
+size = Vector2(25, 53)
+
+[node name="Node2D" type="Node2D" groups=["dial_4"]]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 13.5)
+shape = SubResource("RectangleShape2D_he5gq")
+
+[node name="ExclamationPoint" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("1_8quug")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://61ihtyhh3qdo"]
+[gd_scene load_steps=100 format=3 uid="uid://61ihtyhh3qdo"]
 
 [ext_resource type="Texture2D" uid="uid://ousj5357rgwi" path="res://Art/Terrain/Terrain (16x16).png" id="1_i35tq"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_0512i"]
@@ -47,6 +47,13 @@
 [ext_resource type="Texture2D" uid="uid://cyf3wbat6tx23" path="res://Art/Characters/Pioners/Пионерка 1.png" id="44_leahb"]
 [ext_resource type="Texture2D" uid="uid://oc0fxl5l1ltp" path="res://Art/Characters/Pioners/Pioner.png" id="46_w7y8e"]
 [ext_resource type="PackedScene" uid="uid://t4cn1ifh85i4" path="res://Scenes/tp_2.tscn" id="47_a6sj4"]
+[ext_resource type="PackedScene" uid="uid://c3jpawibljo2s" path="res://dial_2.tscn" id="48_n48jr"]
+[ext_resource type="PackedScene" uid="uid://dql7mqwdqrcgd" path="res://Scenes/dial_2_2.tscn" id="49_poauk"]
+[ext_resource type="PackedScene" uid="uid://bf8eujpqvtvrk" path="res://Scenes/dial_2_1.tscn" id="50_hahkb"]
+[ext_resource type="PackedScene" uid="uid://dhgi8xrpga75c" path="res://Scenes/dial_3.tscn" id="51_irwdu"]
+[ext_resource type="Texture2D" uid="uid://reedwc672v8d" path="res://Art/interactive/Exclamation_point.png" id="52_n0ik7"]
+[ext_resource type="PackedScene" uid="uid://b5r5q7v1v2r2r" path="res://Scenes/dial_4.tscn" id="53_tya3a"]
+[ext_resource type="PackedScene" uid="uid://cmashjdbourbe" path="res://Scenes/dial_5.tscn" id="54_n2wy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ynf"]
 texture = ExtResource("18_h6141")
@@ -2848,7 +2855,50 @@ animation = &"anim_pioner"
 autoplay = "anim_pioner"
 flip_h = true
 
+[node name="Pioner-12" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(-212, 127)
+sprite_frames = SubResource("SpriteFrames_qklfa")
+animation = &"anim_pioner"
+autoplay = "anim_pioner"
+flip_h = true
+
+[node name="Pionerka-6" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(1234, 122)
+scale = Vector2(1.15625, 1.34375)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame = 6
+frame_progress = 0.948423
+flip_h = true
+
 [node name="PauseMenu" parent="." instance=ExtResource("33_78br0")]
 
 [node name="tp_2" parent="." instance=ExtResource("47_a6sj4")]
 position = Vector2(1287, 143)
+
+[node name="Dialog_2" parent="." instance=ExtResource("48_n48jr")]
+position = Vector2(-1449, 117)
+
+[node name="Dialog_2_2" parent="." instance=ExtResource("49_poauk")]
+position = Vector2(-346, 117)
+
+[node name="Dialog_2_1" parent="." instance=ExtResource("50_hahkb")]
+position = Vector2(-833, 102)
+
+[node name="Node2D" parent="." instance=ExtResource("51_irwdu")]
+position = Vector2(-212, 116)
+
+[node name="ExclamationPoint" type="Sprite2D" parent="."]
+position = Vector2(-212, 99)
+texture = ExtResource("52_n0ik7")
+
+[node name="Node2D2" parent="." instance=ExtResource("53_tya3a")]
+position = Vector2(612, 105)
+
+[node name="ExclamationPoint2" type="Sprite2D" parent="."]
+position = Vector2(1293, 127)
+texture = ExtResource("52_n0ik7")
+
+[node name="Node2D3" parent="." instance=ExtResource("54_n2wy5")]
+position = Vector2(1234, 110)

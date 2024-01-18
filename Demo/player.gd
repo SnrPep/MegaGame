@@ -21,11 +21,11 @@ func _ready():
 	GameManager.player = self
 
 func _process(delta):
-	if Input.is_action_just_pressed("attack") && !hit:
+	if Input.is_action_just_pressed("attack") && !hit and !GameManager.dialogue_playing:
 		attack()
 
 func process(delta):
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and !GameManager.dialogue_playing:
 		attack()
 
 func _physics_process(delta):
@@ -110,7 +110,20 @@ func dialogue_area():
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("Kolya") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/main.dialogue"), "start")
-			return
+		if area.get_parent().is_in_group("dialog_2") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2.dialogue"), "start")
+		if area.get_parent().is_in_group("dialog_2_1") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_1.dialogue"), "start")
+		if area.get_parent().is_in_group("dialog_2_2") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_2.dialogue"), "start")
+		if area.get_parent().is_in_group("dial_3") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_3.dialogue"), "start")
+		if area.get_parent().is_in_group("dial_4") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_4.dialogue"), "start")
+		if area.get_parent().is_in_group("dial_5") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_5.dialogue"), "start")
+		if area.get_parent().is_in_group("dial_6") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_6.dialogue"), "start")
 
 func iframes():
 	can_take_damage = false

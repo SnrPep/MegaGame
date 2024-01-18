@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3jpawibljo2s"]
+
+[sub_resource type="GDScript" id="GDScript_bbt2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22hx1"]
+
+[node name="Node2D" type="Node2D" groups=["dialog_2"]]
+script = SubResource("GDScript_bbt2t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_22hx1")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

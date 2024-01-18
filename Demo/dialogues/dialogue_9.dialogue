@@ -1,0 +1,5 @@
+~ start
+set GameManager.dialogue_playing = true
+Мысли: Пора возращаться обратно, а то вожатая будет ругаться.
+set GameManager.dialogue_playing = false
+=> END
