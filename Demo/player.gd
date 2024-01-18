@@ -46,6 +46,8 @@ func _physics_process(delta):
 			velocity.x = direction * speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
+	else:
+		velocity.x = 0
 	
 	move_and_slide()
 	update_animation()
@@ -83,8 +85,6 @@ func take_damage(damage_amount : int):
 		iframes()
 		health -= damage_amount
 		
-		$Healthbar.update_healthbar(health, max_health)
-		
 		hit = true
 		attacking = false
 		
@@ -110,11 +110,11 @@ func dialogue_area():
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("Kolya") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/main.dialogue"), "start")
-		if area.get_parent().is_in_group("dialog_2") && !GameManager.dialogue_playing:
+		if area.get_parent().is_in_group("dialog_2") && !GameManager.dialogue_playing && GameManager.dial2:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2.dialogue"), "start")
-		if area.get_parent().is_in_group("dialog_2_1") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+		if area.get_parent().is_in_group("dialog_2_1") && !GameManager.dialogue_playing && GameManager.dial21:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_1.dialogue"), "start")
-		if area.get_parent().is_in_group("dialog_2_2") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
+		if area.get_parent().is_in_group("dialog_2_2") && !GameManager.dialogue_playing && GameManager.dial22:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_2.dialogue"), "start")
 		if area.get_parent().is_in_group("dial_3") && Input.is_action_just_pressed("Dialogue") && !GameManager.dialogue_playing:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_3.dialogue"), "start")

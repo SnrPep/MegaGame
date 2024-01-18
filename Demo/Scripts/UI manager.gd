@@ -4,7 +4,7 @@ func _ready():
 	GameManager.pause_menu = $Pause_menu
 
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && !GameManager.dialogue_playing:
 		GameManager.pause_play()
 
 func _on_resume_pressed():

@@ -226,6 +226,7 @@ height = 28.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ly5a1"]
 
 [node name="enemy_girl" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_2ix4d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -251,3 +252,7 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_ly5a1")
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(1, -8)
+target_position = Vector2(-13, 0)

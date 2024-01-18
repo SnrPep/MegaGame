@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://c2rmmg0x00176"]
+[gd_scene load_steps=98 format=3 uid="uid://c2rmmg0x00176"]
 
 [ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="1_ec1qp"]
 [ext_resource type="PackedScene" uid="uid://b1qm7tx0oh4xt" path="res://player.tscn" id="2_po8k7"]
@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://de3nh70230bjo" path="res://Art/Terrain/New Terrain (16x16).png" id="42_c3lhi"]
 [ext_resource type="PackedScene" uid="uid://c7he71g6tn3wh" path="res://Scenes/tp_3.tscn" id="43_13w5m"]
 [ext_resource type="PackedScene" uid="uid://dpnbf3ulqukl6" path="res://Scenes/dial_6.tscn" id="44_apt0b"]
+[ext_resource type="AudioStream" uid="uid://xjkevj3r67rn" path="res://Sounds/C418 - Sweden - Minecraft Volume Alpha.mp3" id="45_ppx51"]
+[ext_resource type="AudioStream" uid="uid://bwi8wuinffd3c" path="res://Sounds/kamin-zvuk-goryaschih-drov.mp3" id="46_0n3xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_euqa7"]
 atlas = ExtResource("33_mwrfl")
@@ -1819,3 +1821,16 @@ position = Vector2(3229, 135)
 
 [node name="Node2D" parent="." instance=ExtResource("44_apt0b")]
 position = Vector2(1166, 131)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_ppx51")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(1000, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioListener2D"]
+position = Vector2(782, 126)
+stream = ExtResource("46_0n3xd")
+volume_db = -15.352
+autoplay = true
+max_distance = 500.0

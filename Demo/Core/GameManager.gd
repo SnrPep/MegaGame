@@ -11,6 +11,13 @@ var paused = false
 var dialogue_playing = false
 var kolya_free = false
 var second_dial = true
+var dial1 = true
+var dial2 = true
+var dial21 = true
+var dial22 = true
+var dial3 = true
+var dial4 = true
+var dial5 = true
 
 func respawn_player():
 	player.health = player.max_health

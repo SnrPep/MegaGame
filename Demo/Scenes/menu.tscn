@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu8m1e7wf0wyt"]
+[gd_scene load_steps=7 format=3 uid="uid://bu8m1e7wf0wyt"]
 
 [ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="1_u4vja"]
+[ext_resource type="Texture2D" uid="uid://bpw8etadyf16c" path="res://Art/main_menu.jpg" id="2_l0qk8"]
 [ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_l3juj"]
 [ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_iamss"]
 [ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="5_bvj6p"]
@@ -23,6 +24,11 @@ offset_right = 360.0
 offset_bottom = 240.0
 texture = SubResource("CompressedTexture2D_cc5sh")
 expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu_buttons/MainMenu"]
+position = Vector2(178.5, 120.5)
+scale = Vector2(0.120333, 0.1205)
+texture = ExtResource("2_l0qk8")
 
 [node name="Label" type="Label" parent="Menu_buttons/MainMenu"]
 layout_mode = 1

@@ -12,8 +12,11 @@ if GameManager.second_dial:
 	Борис: ЧТО???
 	set GameManager.kolya_free = true
 	set GameManager.second_dial = false
-else:
+elif GameManager.dial1:
 	Подсознание: А ты не так уж и безнадёжен, как я думал.
 	Подсознание: А теперь зайди в эту дверь и приготовься к приключениям.
+	set GameManager.dial1 = false
+else:
+	...
 set GameManager.dialogue_playing = false	
 => END
