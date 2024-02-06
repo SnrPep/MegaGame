@@ -2790,8 +2790,7 @@ position = Vector2(493, 129)
 sprite_frames = SubResource("SpriteFrames_hubkb")
 animation = &"pionerka"
 autoplay = "pionerka"
-frame = 6
-frame_progress = 0.948423
+frame_progress = 0.835981
 flip_h = true
 
 [node name="Pionerka-3" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
@@ -2871,6 +2870,14 @@ animation = &"pionerka"
 autoplay = "pionerka"
 frame = 6
 frame_progress = 0.948423
+flip_h = true
+
+[node name="Pionerka-7" type="AnimatedSprite2D" parent="ParallaxBackground/Pioners"]
+position = Vector2(611, 128)
+sprite_frames = SubResource("SpriteFrames_hubkb")
+animation = &"pionerka"
+autoplay = "pionerka"
+frame_progress = 0.936078
 flip_h = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("33_78br0")]

@@ -33,6 +33,8 @@ func flip():
 		speed = abs(speed) * -1
 
 func die():
+	$AnimatedSprite2D.play("death")
+	await get_tree().create_timer(1).timeout
 	queue_free()
 
 func take_damage(damage_amount : int):

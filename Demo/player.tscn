@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b1qm7tx0oh4xt"]
+[gd_scene load_steps=77 format=3 uid="uid://b1qm7tx0oh4xt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_n2sxs"]
 [ext_resource type="Texture2D" uid="uid://cvvdybpjuo2al" path="res://Art/Characters/Soul/Attack/Attack14.png" id="3_8soq5"]
@@ -62,7 +62,9 @@
 [ext_resource type="Texture2D" uid="uid://dpjiwj417hocf" path="res://Art/Characters/Soul/Death/24.png" id="61_ei8fw"]
 [ext_resource type="Texture2D" uid="uid://co8np6msxuh10" path="res://Art/Characters/Soul/Death/25.png" id="62_xk0cj"]
 [ext_resource type="Texture2D" uid="uid://com2nhbes8ukc" path="res://Art/Characters/Soul/Death/26.png" id="63_vn7e8"]
+[ext_resource type="AudioStream" uid="uid://br71joo1mbgxy" path="res://Sounds/legkiy-udar-po-bokserskoy-grushe.mp3" id="64_cql66"]
 [ext_resource type="Texture2D" uid="uid://bt002gm53hoy" path="res://Art/Characters/Soul/Death/27.png" id="64_hclgd"]
+[ext_resource type="AudioStream" uid="uid://by7mpje6r62cr" path="res://Sounds/roblox-death-sound-effect.mp3" id="65_v67ct"]
 
 [sub_resource type="Animation" id="Animation_kqsbn"]
 resource_name = "Jump"
@@ -193,7 +195,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf1w8"]
-size = Vector2(20, 24)
+size = Vector2(45, 24)
 
 [sub_resource type="GDScript" id="GDScript_e3t7t"]
 
@@ -225,6 +227,12 @@ shape = SubResource("CapsuleShape2D_dbmsp")
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(12, 3)
+position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_jf1w8")
 script = SubResource("GDScript_e3t7t")
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("64_cql66")
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("65_v67ct")

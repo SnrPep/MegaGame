@@ -48,6 +48,9 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, speed)
 	else:
 		velocity.x = 0
+		velocity.y = 0
+		if not is_on_floor():
+			velocity.y += gravity * delta * 10
 	
 	move_and_slide()
 	update_animation()
@@ -60,6 +63,7 @@ func _physics_process(delta):
 
 func attack():
 	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	$Attack.play()
 	
 	for area in overlapping_objects:
 		if area.get_parent().is_in_group("Enemies"):
@@ -82,6 +86,7 @@ func update_animation():
 
 func take_damage(damage_amount : int):
 	if can_take_damage:
+		$Damaged.play()
 		iframes()
 		health -= damage_amount
 		

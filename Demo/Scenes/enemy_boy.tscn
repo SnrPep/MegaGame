@@ -232,7 +232,7 @@ script = ExtResource("1_wumib")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_wl8pn")
-animation = &"run"
+animation = &"death"
 autoplay = "run"
 flip_h = true
 
