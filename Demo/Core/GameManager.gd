@@ -3,6 +3,7 @@ extends Node
 var current_checkpoint : Checkpoint
 var pause_menu
 var main_menu
+var sett
  
 var player : Player
 
@@ -45,6 +46,17 @@ func quit():
 
 func play():
 	get_tree().change_scene_to_file("res://Scenes/level_0.tscn")
+
+func settings_play():
+	paused = !paused
+	get_tree().paused = paused
+	sett.visible = paused
+
+func settings_menu():
+	settings_play()
+
+func back():
+	settings_play()
 
 func game_paused():
 	paused = !paused

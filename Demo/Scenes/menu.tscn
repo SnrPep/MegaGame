@@ -5,8 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_l3juj"]
 [ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_iamss"]
 [ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="5_bvj6p"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cc5sh"]
+[ext_resource type="PackedScene" uid="uid://htla272a1oj2" path="res://Scenes/settings.tscn" id="5_jfaqb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -22,13 +21,8 @@ script = ExtResource("1_u4vja")
 [node name="MainMenu" type="TextureRect" parent="Menu_buttons"]
 offset_right = 360.0
 offset_bottom = 240.0
-texture = SubResource("CompressedTexture2D_cc5sh")
-expand_mode = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Menu_buttons/MainMenu"]
-position = Vector2(178.5, 120.5)
-scale = Vector2(0.120333, 0.1205)
 texture = ExtResource("2_l0qk8")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Menu_buttons/MainMenu"]
 layout_mode = 1
@@ -111,12 +105,15 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_iamss")
 text = "Quit"
 
+[node name="Settings" parent="." instance=ExtResource("5_jfaqb")]
+layout_mode = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bvj6p")
 volume_db = 1.0
 autoplay = true
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Settings" to="Menu_buttons" method="_on_play_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Settings" to="Menu_buttons" method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
