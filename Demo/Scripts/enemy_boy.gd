@@ -4,6 +4,7 @@ var speed = -60.0
 var player = false
 var player_chase = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var can_move = false
 
 var facing_right = false
 var health = 1
@@ -11,14 +12,15 @@ var hit = false
 var can_take_damage = true
 
 func _physics_process(delta):
-	velocity.x = speed
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
-		flip()
-	
+	if can_move:
+		velocity.x = speed
+		
+		if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
+			flip()
+		
 	move_and_slide()
 
 	
@@ -56,3 +58,8 @@ func iframes():
 func _on_hitbox_area_entered(area):
 	if area.get_parent() is Player:
 		area.get_parent().take_damage(1)
+
+
+func _on_see_you_area_entered(area):
+	if area.get_parent().is_in_group("Player"):
+		can_move = true

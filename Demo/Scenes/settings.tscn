@@ -23,16 +23,32 @@ offset_bottom = 240.0
 texture = ExtResource("2_luqxr")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="Settings/Setting"]
-modulate = Color(0.780392, 0.160784, 0.160784, 1)
+[node name="Other volume" type="Label" parent="Settings/Setting"]
+offset_left = 127.0
+offset_top = 72.0
+offset_right = 234.0
+offset_bottom = 98.0
+text = "Other volume"
+
+[node name="Other" type="HSlider" parent="Settings/Setting"]
 layout_mode = 0
 offset_left = 145.0
-offset_top = 40.0
+offset_top = 95.0
 offset_right = 215.0
-offset_bottom = 70.0
-text = "Volume"
+offset_bottom = 111.0
+min_value = -50.0
+max_value = 0.0
 
-[node name="HSlider" type="HSlider" parent="Settings/Setting"]
+[node name="Music volume" type="Label" parent="Settings/Setting"]
+modulate = Color(0.780392, 0.160784, 0.160784, 1)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 40.0
+offset_right = 233.0
+offset_bottom = 70.0
+text = "Music volume"
+
+[node name="Musuc" type="HSlider" parent="Settings/Setting"]
 layout_mode = 2
 offset_left = 145.0
 offset_top = 60.0
@@ -43,15 +59,15 @@ max_value = 0.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings/Setting"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.535
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.535
 offset_left = -60.0
-offset_top = -35.0
+offset_top = -11.4
 offset_right = 60.0
-offset_bottom = 35.0
+offset_bottom = 26.6
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,5 +84,6 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_x7dai")
 text = "Back"
 
-[connection signal="value_changed" from="Settings/Setting/HSlider" to="Settings" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Setting/Other" to="Settings" method="_on_other_value_changed"]
+[connection signal="value_changed" from="Settings/Setting/Musuc" to="Settings" method="_on_musuc_value_changed"]
 [connection signal="pressed" from="Settings/Setting/VBoxContainer/HBoxContainer2/Back" to="Settings" method="_on_back_pressed"]

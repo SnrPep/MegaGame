@@ -199,7 +199,7 @@ size = Vector2(45, 24)
 
 [sub_resource type="GDScript" id="GDScript_e3t7t"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_n2sxs")
 
