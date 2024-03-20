@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+@onready var sprite = $AnimatedSprite2D
+
 var speed = -60.0
 var player = false
 var player_chase = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = false
+var dead = false
 
 var facing_right = false
 var health = 1
@@ -15,11 +18,11 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if can_move:
+	if can_move && !dead:
 		velocity.x = speed
 		
-		if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
-			flip()
+		'if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
+			flip()'
 		
 	move_and_slide()
 
@@ -27,11 +30,11 @@ func _physics_process(delta):
 func flip():
 	facing_right = !facing_right
 	
-	scale.x = abs(scale.x) * -1
-	
 	if facing_right:
+		sprite.scale.x = abs(sprite.scale.x) * -1
 		speed = abs(speed)
 	else:
+		sprite.scale.x = abs(sprite.scale.x)
 		speed = abs(speed) * -1
 
 func die():
@@ -48,6 +51,7 @@ func take_damage(damage_amount : int):
 		hit = true
 		
 		if health <= 0:
+			dead = true
 			die()
 
 func iframes():
@@ -56,10 +60,18 @@ func iframes():
 	can_take_damage = true
 
 func _on_hitbox_area_entered(area):
-	if area.get_parent() is Player:
+	if area.get_parent() is Player && !dead:
 		area.get_parent().take_damage(1)
 
-
-func _on_see_you_area_entered(area):
+func _on_right_area_entered(area):
 	if area.get_parent().is_in_group("Player"):
 		can_move = true
+		if !facing_right:
+			flip()
+
+
+func _on_left_area_entered(area):
+	if area.get_parent().is_in_group("Player"):
+		can_move = true
+		if facing_right:
+			flip()

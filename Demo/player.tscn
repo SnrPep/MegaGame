@@ -195,7 +195,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf1w8"]
-size = Vector2(45, 24)
+size = Vector2(21, 24)
 
 [sub_resource type="GDScript" id="GDScript_e3t7t"]
 
@@ -227,7 +227,7 @@ shape = SubResource("CapsuleShape2D_dbmsp")
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(-0.5, 3)
+position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_jf1w8")
 script = SubResource("GDScript_e3t7t")
 

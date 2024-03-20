@@ -31,9 +31,9 @@ func process(delta):
 func _physics_process(delta):
 	if !GameManager.dialogue_playing:
 		if Input.is_action_just_pressed("left"):
-			sprite.scale.x = abs(sprite.scale.x) * -1
+			scale.x = abs(scale.x) * -1
 		if Input.is_action_just_pressed("right"):
-			sprite.scale.x = abs(sprite.scale.x)
+			scale.x = abs(scale.x)
 			
 		if not is_on_floor():
 			velocity.y += gravity * delta

@@ -24,6 +24,7 @@ texture = ExtResource("2_luqxr")
 expand_mode = 1
 
 [node name="Other volume" type="Label" parent="Settings/Setting"]
+layout_mode = 0
 offset_left = 127.0
 offset_top = 72.0
 offset_right = 234.0

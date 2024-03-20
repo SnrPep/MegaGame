@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bk32pgx0mpayx"]
+[gd_scene load_steps=38 format=3 uid="uid://bk32pgx0mpayx"]
 
 [ext_resource type="Texture2D" uid="uid://cdvtd6v6x2k8y" path="res://Art/Characters/pioner_boy/Animated_Boy_Enemy_1.png" id="1_vqwpf"]
 [ext_resource type="Script" path="res://Scripts/enemy_boy.gd" id="1_wumib"]
@@ -225,9 +225,11 @@ height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_362l8"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6o5q0"]
-radius = 69.0
-height = 140.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_0rwye"]
+radius = 24.0208
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2ffo"]
+size = Vector2(45, 35)
 
 [node name="enemy_boy" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
@@ -241,7 +243,6 @@ autoplay = "run"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_7mg8b")
 
@@ -250,7 +251,6 @@ position = Vector2(-8, -14)
 target_position = Vector2(0, 16)
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -15)
@@ -260,11 +260,19 @@ shape = SubResource("CapsuleShape2D_362l8")
 position = Vector2(0, -12)
 target_position = Vector2(-12, 0)
 
-[node name="SeeYOU" type="Area2D" parent="."]
+[node name="Right" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeeYOU"]
-position = Vector2(1, -13)
-shape = SubResource("CapsuleShape2D_6o5q0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+show_behind_parent = true
+position = Vector2(54, -17)
+shape = SubResource("CircleShape2D_0rwye")
+
+[node name="Left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-49, -17)
+shape = SubResource("RectangleShape2D_d2ffo")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="area_entered" from="SeeYOU" to="." method="_on_see_you_area_entered"]
+[connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
+[connection signal="area_entered" from="Left" to="." method="_on_left_area_entered"]
