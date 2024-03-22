@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var attacking = false
 
+var facing_right = true
 var max_health = 3
 var health = 0
 var can_take_damage = true
@@ -30,10 +31,12 @@ func process(delta):
 
 func _physics_process(delta):
 	if !GameManager.dialogue_playing:
-		if Input.is_action_just_pressed("left"):
+		if Input.is_action_just_pressed("left") && facing_right:
+			facing_right = false
 			scale.x = abs(scale.x) * -1
-		if Input.is_action_just_pressed("right"):
-			scale.x = abs(scale.x)
+		if Input.is_action_just_pressed("right") && !facing_right:
+			facing_right = true
+			scale.x = abs(scale.x) * -1
 			
 		if not is_on_floor():
 			velocity.y += gravity * delta
