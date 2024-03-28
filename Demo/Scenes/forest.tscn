@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjb04y3bcifso"]
+[gd_scene load_steps=16 format=3 uid="uid://cjb04y3bcifso"]
 
 [ext_resource type="Texture2D" uid="uid://de3nh70230bjo" path="res://Art/Terrain/New Terrain (16x16).png" id="1_2tcqa"]
 [ext_resource type="PackedScene" uid="uid://dg75g2msmpb5c" path="res://checkpoint.tscn" id="1_yktty"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dbdg8hyppk1qv" path="res://Art/layers/parallax-forest-trees3.png" id="6_sl5nv"]
 [ext_resource type="PackedScene" uid="uid://bk32pgx0mpayx" path="res://Scenes/enemy_boy.tscn" id="10_3y5y7"]
 [ext_resource type="PackedScene" uid="uid://go3qr33xs81o" path="res://Scenes/enemy_girl.tscn" id="11_xvr6h"]
+[ext_resource type="PackedScene" uid="uid://b3sp0g54m803t" path="res://Scenes/tp_4(fire).tscn" id="12_1yt4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2uv0t"]
 texture = ExtResource("1_2tcqa")
@@ -1298,3 +1299,6 @@ position = Vector2(2332, 160)
 
 [node name="enemy_boy8" parent="." instance=ExtResource("10_3y5y7")]
 position = Vector2(-162, 140)
+
+[node name="Node2D" parent="." instance=ExtResource("12_1yt4f")]
+position = Vector2(2405, -37)
