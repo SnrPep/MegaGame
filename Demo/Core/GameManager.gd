@@ -19,6 +19,7 @@ var dial22 = true
 var dial3 = true
 var dial4 = true
 var dial5 = true
+var dial6 = true
 
 func respawn_player():
 	player.health = player.max_health

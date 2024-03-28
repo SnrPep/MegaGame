@@ -111,6 +111,8 @@ func indoor():
 			get_tree().change_scene_to_file("res://Scenes/level1_night.tscn")
 		if area.get_parent().is_in_group("TP3"):
 			get_tree().change_scene_to_file("res://Scenes/forest.tscn")
+		if area.get_parent().is_in_group("TP_4"):
+			get_tree().change_scene_to_file("res://Scenes/level_final.tscn")
 
 func dialogue_area():
 	var overlapping_objects = $Hitbox.get_overlapping_areas()
@@ -125,8 +127,7 @@ func dialogue_area():
 				DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_4.dialogue"), "start")
 			if area.get_parent().is_in_group("dial_5"):
 				DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_5.dialogue"), "start")
-			if area.get_parent().is_in_group("dial_6"):
-				DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_6.dialogue"), "start")
+			
 		
 		if area.get_parent().is_in_group("dialog_2") && !GameManager.dialogue_playing && GameManager.dial2:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2.dialogue"), "start")
@@ -134,6 +135,8 @@ func dialogue_area():
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_1.dialogue"), "start")
 		if area.get_parent().is_in_group("dialog_2_2") && !GameManager.dialogue_playing && GameManager.dial22:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_2_2.dialogue"), "start")
+		if area.get_parent().is_in_group("dial_6") && !GameManager.dialogue_playing && GameManager.dial6:
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogues/dialogue_6.dialogue"), "start")
 
 func iframes():
 	can_take_damage = false

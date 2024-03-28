@@ -3,5 +3,6 @@ set GameManager.dialogue_playing = true
 ~: О, боже, как я мог так облажаться, все уже собрались у костра.
 ~: Надо поторопиться!
 
+set GameManager.dial6 = false
 set GameManager.dialogue_playing = false
 => END
