@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu8m1e7wf0wyt"]
 
-[ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="1_u4vja"]
-[ext_resource type="Texture2D" uid="uid://bpw8etadyf16c" path="res://Art/main_menu.jpg" id="2_l0qk8"]
-[ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="2_l3juj"]
-[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_iamss"]
-[ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="5_bvj6p"]
-[ext_resource type="PackedScene" uid="uid://htla272a1oj2" path="res://Scenes/settings.tscn" id="5_jfaqb"]
+[ext_resource type="Script" path="res://Scripts/Munu_buttons.gd" id="1_ai2l7"]
+[ext_resource type="Texture2D" uid="uid://bpw8etadyf16c" path="res://Art/main_menu.jpg" id="2_pkaxg"]
+[ext_resource type="FontFile" uid="uid://d36c4wenqgy3n" path="res://Art/Interface/Prospero Bold NBP/ProsperoBoldNbpRegular.ttf" id="3_estfm"]
+[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="4_vg06j"]
+[ext_resource type="PackedScene" uid="uid://htla272a1oj2" path="res://Scenes/settings.tscn" id="5_n3eo0"]
+[ext_resource type="AudioStream" uid="uid://bx4c1vy07ltp8" path="res://Sounds/main ALD.mp3" id="6_0cgaf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,12 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Menu_buttons" type="CanvasLayer" parent="."]
-script = ExtResource("1_u4vja")
+script = ExtResource("1_ai2l7")
 
 [node name="MainMenu" type="TextureRect" parent="Menu_buttons"]
 offset_right = 360.0
 offset_bottom = 240.0
-texture = ExtResource("2_l0qk8")
+texture = ExtResource("2_pkaxg")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Menu_buttons/MainMenu"]
@@ -37,7 +37,7 @@ grow_horizontal = 2
 auto_translate = false
 theme_override_colors/font_color = Color(0.729412, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.258824, 0.203922, 0.00392157, 1)
-theme_override_fonts/font = ExtResource("2_l3juj")
+theme_override_fonts/font = ExtResource("3_estfm")
 theme_override_font_sizes/font_size = 25
 text = "A live in dream"
 horizontal_alignment = 1
@@ -71,7 +71,7 @@ focus_neighbor_top = NodePath("../../HBoxContainer2/Quit")
 focus_neighbor_bottom = NodePath("../../HBoxContainer3/Settings")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_iamss")
+theme_override_fonts/font = ExtResource("4_vg06j")
 text = "Start"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
@@ -87,7 +87,7 @@ focus_neighbor_top = NodePath("../../HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../../HBoxContainer2/Quit")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_iamss")
+theme_override_fonts/font = ExtResource("4_vg06j")
 text = "Settings"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Menu_buttons/MainMenu/VBoxContainer"]
@@ -102,19 +102,19 @@ focus_neighbor_top = NodePath("../../HBoxContainer3/Settings")
 focus_neighbor_bottom = NodePath("../../HBoxContainer/Play")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_iamss")
+theme_override_fonts/font = ExtResource("4_vg06j")
 text = "Quit"
 
-[node name="Settings" parent="." instance=ExtResource("5_jfaqb")]
+[node name="Settings" parent="." instance=ExtResource("5_n3eo0")]
 layout_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["Music"]]
 process_mode = 3
-stream = ExtResource("5_bvj6p")
+stream = ExtResource("6_0cgaf")
 volume_db = 1.0
 autoplay = true
 
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer/Play" to="Menu_buttons" method="_on_play_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer3/Settings" to="Menu_buttons" method="_on_settings_pressed"]
-[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="Menu_buttons/MainMenu/VBoxContainer/HBoxContainer2/Quit" to="Menu_buttons" method="_on_quit_pressed"]

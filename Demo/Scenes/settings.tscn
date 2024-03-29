@@ -24,36 +24,36 @@ expand_mode = 1
 
 [node name="Other volume" type="Label" parent="Settings/Setting"]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 72.0
-offset_right = 234.0
-offset_bottom = 98.0
+offset_left = 10.0
+offset_top = 84.0
+offset_right = 117.0
+offset_bottom = 110.0
 text = "Other volume"
 
 [node name="Other" type="HSlider" parent="Settings/Setting"]
 layout_mode = 0
-offset_left = 145.0
-offset_top = 95.0
-offset_right = 215.0
-offset_bottom = 111.0
+offset_left = 222.0
+offset_top = 97.0
+offset_right = 343.0
+offset_bottom = 113.0
 min_value = -50.0
 max_value = 0.0
 
 [node name="Music volume" type="Label" parent="Settings/Setting"]
 modulate = Color(0.780392, 0.160784, 0.160784, 1)
 layout_mode = 0
-offset_left = 125.0
-offset_top = 40.0
-offset_right = 233.0
-offset_bottom = 70.0
+offset_left = 10.0
+offset_top = 62.0
+offset_right = 118.0
+offset_bottom = 92.0
 text = "Music volume"
 
 [node name="Musuc" type="HSlider" parent="Settings/Setting"]
 layout_mode = 2
-offset_left = 145.0
-offset_top = 60.0
-offset_right = 215.0
-offset_bottom = 76.0
+offset_left = 222.0
+offset_top = 68.0
+offset_right = 343.0
+offset_bottom = 84.0
 min_value = -50.0
 max_value = 0.0
 
@@ -65,9 +65,9 @@ anchor_top = 0.535
 anchor_right = 0.5
 anchor_bottom = 0.535
 offset_left = -60.0
-offset_top = -11.4
+offset_top = 53.6
 offset_right = 60.0
-offset_bottom = 26.6
+offset_bottom = 91.6
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -84,13 +84,47 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_fvluf")
 text = "Back"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Setting"]
+[node name="DisplayModel" type="Label" parent="Settings/Setting"]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 122.0
-offset_right = 99.0
-offset_bottom = 162.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 149.0
+offset_bottom = 33.0
+text = "Screen Resolution"
+
+[node name="DisplayModeO" type="OptionButton" parent="Settings/Setting"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 7.0
+offset_right = 345.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 10
+item_count = 3
+selected = 0
+popup/item_0/text = "Full Screen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless Modes"
+popup/item_2/id = 2
+
+[node name="DisplayFPS" type="Label" parent="Settings/Setting"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 33.0
+offset_right = 38.0
+offset_bottom = 59.0
+text = "FPS"
+
+[node name="DisplayFPSCH" type="CheckButton" parent="Settings/Setting"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 38.0
+offset_right = 344.0
+offset_bottom = 62.0
 
 [connection signal="value_changed" from="Settings/Setting/Other" to="Settings" method="_on_other_value_changed"]
 [connection signal="value_changed" from="Settings/Setting/Musuc" to="Settings" method="_on_musuc_value_changed"]
 [connection signal="pressed" from="Settings/Setting/VBoxContainer/HBoxContainer2/Back" to="Settings" method="_on_back_pressed"]
+[connection signal="item_selected" from="Settings/Setting/DisplayModeO" to="Settings" method="_on_display_mode_o_item_selected"]
+[connection signal="toggled" from="Settings/Setting/DisplayFPSCH" to="Settings" method="_on_display_fpsch_toggled"]
