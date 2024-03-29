@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://htla272a1oj2"]
 
-[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_rpin8"]
-[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="1_x7dai"]
-[ext_resource type="Texture2D" uid="uid://bpw8etadyf16c" path="res://Art/main_menu.jpg" id="2_luqxr"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_gmg0u"]
+[ext_resource type="Texture2D" uid="uid://bpw8etadyf16c" path="res://Art/main_menu.jpg" id="2_umwcd"]
+[ext_resource type="FontFile" uid="uid://da4rs50hxdf7j" path="res://Art/Interface/Prospero Bold NBP/ProsperoNbpRegular.ttf" id="3_fvluf"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -14,13 +14,12 @@ grow_vertical = 2
 
 [node name="Settings" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("1_rpin8")
+script = ExtResource("1_gmg0u")
 
 [node name="Setting" type="TextureRect" parent="Settings"]
-visible = false
 offset_right = 360.0
 offset_bottom = 240.0
-texture = ExtResource("2_luqxr")
+texture = ExtResource("2_umwcd")
 expand_mode = 1
 
 [node name="Other volume" type="Label" parent="Settings/Setting"]
@@ -82,8 +81,15 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_x7dai")
+theme_override_fonts/font = ExtResource("3_fvluf")
 text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Setting"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 122.0
+offset_right = 99.0
+offset_bottom = 162.0
 
 [connection signal="value_changed" from="Settings/Setting/Other" to="Settings" method="_on_other_value_changed"]
 [connection signal="value_changed" from="Settings/Setting/Musuc" to="Settings" method="_on_musuc_value_changed"]
