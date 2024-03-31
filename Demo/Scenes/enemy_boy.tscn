@@ -261,6 +261,7 @@ position = Vector2(0, -12)
 target_position = Vector2(-12, 0)
 
 [node name="Right" type="Area2D" parent="."]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 show_behind_parent = true
@@ -268,6 +269,7 @@ position = Vector2(54, -17)
 shape = SubResource("CircleShape2D_0rwye")
 
 [node name="Left" type="Area2D" parent="."]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 position = Vector2(-49, -17)

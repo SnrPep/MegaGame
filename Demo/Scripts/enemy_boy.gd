@@ -21,8 +21,8 @@ func _physics_process(delta):
 	if can_move && !dead:
 		velocity.x = speed
 		
-		'if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
-			flip()'
+		if !$RayCast2D.is_colliding() && is_on_floor() || $RayCast2D2.is_colliding():
+			flip()
 		
 	move_and_slide()
 
@@ -32,9 +32,13 @@ func flip():
 	
 	if facing_right:
 		sprite.scale.x = abs(sprite.scale.x) * -1
+		$RayCast2D2.scale.x = abs($RayCast2D2.scale.x) * -1
+		$RayCast2D.scale.x = abs($RayCast2D.scale.x) * -1
 		speed = abs(speed)
 	else:
 		sprite.scale.x = abs(sprite.scale.x)
+		$RayCast2D2.scale.x = abs($RayCast2D2.scale.x)
+		$RayCast2D.scale.x = abs($RayCast2D.scale.x)
 		speed = abs(speed) * -1
 
 func die():
